@@ -1,0 +1,14 @@
+.App {
+  text-align: center;
+  background-color: aquamarine;
+  height: 100vh;
+  padding: 5%;
+}
+
+.btn-primary {
+  background-color: #71ADB6!important;
+  font-size: 3rem!important;
+  border: none!important;
+  width: 10rem;
+  margin: 0.2em;
+}

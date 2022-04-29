@@ -1,0 +1,12 @@
+/* .deviceDiv {
+    width: 10px!important;
+    height: 50vh;
+    background-color: black;
+} */
+
+.device-Div {
+    border-radius: 20px;
+    background-color: #262B33;
+    height: auto;
+    width: 780px;
+  }
