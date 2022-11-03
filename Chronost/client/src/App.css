@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.App {
+    text-align: center;
+}
+
+.nav-item {
+    width: 19em;
+    /* background-color: rgba(0, 0, 0, .4); */
+}
