@@ -51,6 +51,32 @@
     font-size: 18pt;
     color: black;
     transition: all 800ms;
+}      
+
+.LgFrm button:active {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0);
+    width: 50%;
+    font-family: 'Roboto', sans-serif;
+    border: none;
+    /* border: solid 2px black; */
+    font-size: 18pt;
+    color: black;
+    transition: all 800ms;
+    box-shadow: none;
+}        
+
+.LgFrm button:focus {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0);
+    width: 50%;
+    font-family: 'Roboto', sans-serif;
+    border: none;
+    /* border: solid 2px black; */
+    font-size: 18pt;
+    color: black;
+    transition: all 800ms;
+    box-shadow: none;
 }   
 
 .LgFrm button span::after {
