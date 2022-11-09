@@ -2,9 +2,11 @@ import React from 'react';
 
 function HandoverComponent() {
     return(
-        <h1>
-            Sample Handover
-        </h1>
+        <div className='contentdiv'>
+            <h1>
+                Sample Handover
+            </h1>
+        </div>
     )
 }
 

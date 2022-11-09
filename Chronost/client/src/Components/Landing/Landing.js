@@ -1,15 +1,33 @@
 import React from 'react';
-import NavbarComponent from '../Navbar/NavBarComponent';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import HandoverComponent from '../Handovers/Handovers';
+import './Landing.css';
 
 function LandingComponent() {
+    var username = localStorage.getItem("name");
     return (
         <div className='contentdiv'>
-            <h1>Sample landing</h1>
+            <h1 style={{textAlign: 'center'}}>Welcome {username}</h1>
+            
+            <div id='dmdiv' className='landingContentdvs'>
+                <h3>Available DMs</h3>
+                <hr/>
+                <h1>Username | Status</h1>
+                <h1>Username | Status</h1>
+                <h1>Username | Status</h1>
+                <h1>Username | Status</h1>
+            </div>
+            
+            <div id='casediv' className='landingContentdvs'>
+                <h3>Assigned cases</h3>
+                <hr/>
+                <h1>Username | Status</h1>
+                <h1>Username | Status</h1>
+                <h1>Username | Status</h1>
+                <h1>Username | Status</h1>
+            </div>
+            
+            <div id='availdiv' className='landingContentdvs'>
+                <h3>Engineer Availability</h3>
+            </div>
         </div>
     );
 };

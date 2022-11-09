@@ -1,10 +1,11 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import './Home.css';
 import { useNavigate } from 'react-router-dom';
 
 function HomeComponent(props) {
+    const [username, setUsername] = useState(""); 
 
     function Login() {
         var usr = document.getElementById('email').value;
@@ -17,6 +18,7 @@ function HomeComponent(props) {
         if (usr == 'a' && pwd == 'b') {
             console.log('Login successfull!');
             // navigate.path(path);
+            localStorage.setItem("name", usr);
             window.location.href = '/main';
         } else {
             console.log('Error!')

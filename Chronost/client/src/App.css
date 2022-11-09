@@ -1,8 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 .App {
     text-align: center;
+    /* overflow-y: scroll; */
+    padding-right: 17px;
+    box-sizing: content-box;
 }
 
 .nav-item {
@@ -11,7 +13,18 @@
 }
 
 .col {
-    padding: 0;
+    padding: 0!important;
+}
+
+.row {
+    width: 100vw;
+    margin: 0!important;
+    padding: 0!important;
+}
+
+.container-fluid {
+    padding: 0!important;
+    margin: 0!important;
 }
 
 #NavBarDiv a {
@@ -21,8 +34,16 @@
     line-height: 3.5em;
 }
 
+.contentCol {
+    height: 90vh;
+}
+
 .contentdiv {
-    background-color: palevioletred;
-    height: 92vh;
+    /* background-color: #fff; */
+    /* height: 90vh; */
     padding: 1em;
+    /* width: 100%; */
+    height: auto;
+    padding-right: 17px; /* Increase/decrease this value for cross-browser compatibility */
+    box-sizing: content-box; /* So the width will be 100% + 17px */
 }

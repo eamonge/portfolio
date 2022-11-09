@@ -1,6 +1,11 @@
 #NavBarDiv {
-    background-color: rgba(0, 0, 0, .4);
+    background-color: rgba(0, 0, 0, 0);
+    border-bottom: solid 1px #D3D3D3;
     margin: 0;
     padding: 0;
     height: 8vh;
+    -webkit-box-shadow: 0px 9px 11px -3px rgba(0, 0, 0, 0.65);
+    -moz-box-shadow: 0px 9px 11px -3px rgba(0, 0, 0, 0.65);
+    box-shadow: 0px 9px 11px -3px rgba(0, 0, 0, 0.65);
+    z-index: 3!important;
 }

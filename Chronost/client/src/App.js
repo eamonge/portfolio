@@ -29,7 +29,7 @@ function App() {
           </Col>
         </Row>
         <Row>
-          <Col>
+          <Col className='contentCol'>
             <Routes>
               <Route exact path='/' element={<HomeComponent />} />
               <Route path='/main' element={<LandingComponent />} />
