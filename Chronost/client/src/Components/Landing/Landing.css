@@ -12,7 +12,6 @@
     border-radius: 2%;
     font-size: 1rem;
 }
-
 #dmdiv {
     height: 500px;
     overflow-x: scroll;
@@ -28,4 +27,200 @@
 .landingContentdvs h1 {
     font-size: 22pt;
     font-family: 'Roboto', sans-serif;
+}
+
+.casesdiv h1 {
+    float: left;
+    width: 50%;
+}
+
+#availdiv .btn-primary {
+    width: 100%;
+    margin: 4px;
+    /* background-color: rgba(0, 0, 0, 0); */
+    color: black;
+    font-size: 18pt;
+    border: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+#availdiv .btn-primary:focus {
+    box-shadow: none!important;
+    border: none!important;
+}
+
+#Offline {
+    /* background-color: #D3D3D3; */
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    position: relative;
+    color: #D3D3D3;
+    transition: all 600ms;
+}
+
+#Offline span::after {
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    left: 50%;
+    content: "";
+    height: 5px;
+    width: 0;
+    background-color: #D3D3D3;
+    transition: all 800ms;
+}
+
+#Offline:hover {
+    color: #a1a0a0;
+}
+
+#Offline:hover span::after {
+    left: 0;
+    width: 100%;
+}
+
+#Online {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    position: relative;
+    transition: all 600ms;
+}
+
+#Online:hover {
+    color: green;
+}
+
+#Online span::after {
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    left: 50%;
+    content: "";
+    height: 5px;
+    width: 0;
+    background-color: green;
+    transition: all 800ms;
+}
+
+#Online:hover span::after {
+    left: 0;
+    width: 100%;
+}
+
+#Break {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    position: relative;
+    transition: all 600ms;
+}
+
+#Break:hover {
+    color: yellow;
+}
+
+#Break span::after {
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    left: 50%;
+    content: "";
+    height: 5px;
+    width: 0;
+    background-color: yellow;
+    transition: all 800ms;
+}
+
+#Break:hover span::after {
+    left: 0;
+    width: 100%;
+}
+
+#Lunch {
+    /* background-color: orange; */
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    position: relative;
+    /* color: #D3D3D3; */
+    transition: all 600ms;
+}
+
+#Lunch:hover {
+    color: orange;
+}
+
+#Lunch span::after {
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    left: 50%;
+    content: "";
+    height: 5px;
+    width: 0;
+    background-color: orange;
+    transition: all 800ms;
+}
+
+#Lunch:hover span::after {
+    left: 0;
+    width: 100%;
+}
+
+#Meeting {
+    /* background-color: red; */
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    position: relative;
+    /* color: #D3D3D3; */
+    transition: all 600ms;
+}
+
+#Meeting:hover {
+    color: red;
+}
+
+#Meeting span::after {
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    left: 50%;
+    content: "";
+    height: 5px;
+    width: 0;
+    background-color: red;
+    transition: all 800ms;
+}
+
+#Meeting:hover span::after {
+    left: 0;
+    width: 100%;
+}
+
+#Others {
+    /* background-color: #007BFF; */
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    position: relative;
+    /* color: #D3D3D3; */
+    transition: all 600ms;
+}
+
+#Others:hover {
+    color: #007BFF;
+}
+
+#Others span::after {
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    left: 50%;
+    content: "";
+    height: 5px;
+    width: 0;
+    background-color: #007BFF;
+    transition: all 800ms;
+}
+
+#Others:hover span::after {
+    left: 0;
+    width: 100%;
 }
