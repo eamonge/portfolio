@@ -11,7 +11,7 @@
 .nav-item {
     position: relative!important;
     width: 15em;
-    height: 5em;
+    height: 4.5em;
 }
 
 .nav-item span::after {

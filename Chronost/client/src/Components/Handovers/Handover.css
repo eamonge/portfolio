@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+.table>thead {
+    background: #0F2027;
+background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);
+background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
+
+.table tbody td {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.table tbody {
+    border-top: none!important;
+}
+
+.btn-primary {
+    background-color: rgba(0, 0, 0, 0)!important;
+    border: none!important;
+    color: black!important;
+}
+
+.btn-primary:focus {
+    box-shadow: none!important;
+}
+
+#btnAddHandover {
+    background-color: #6F42C1!important;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 24pt;
+    border-radius: 2%;
+    color: white!important;
+    width: 50%;
+}
