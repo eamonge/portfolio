@@ -1,29 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { IoCloseCircleOutline } from "react-icons/io5";
 import Button from 'react-bootstrap/Button';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
 
-const API_BASE = "http://localhost:5000";
-
-function BreakComponent(props) {
-
-    var status = "Break";
-    const [engineers, setEngineers] = useState([]);
-
-    const GetEngineers = async () => {
-        fetch(`${API_BASE}/auth/status/${status}`)
-            .then(res => res.json())
-            .then(data => setEngineers(data))
-            .catch(err => console.log(`Error: ${err}`))
-    }
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            GetEngineers();
-        }, 180000);
-        return () => clearInterval(interval);
-    }, []);
+function OnlineComponent(props) {
     return (props.trigger) ? (
         <div className='backdrop_availability'>
             <div id='avalilable_diveng' className='availability_contentdiv'>
@@ -41,24 +22,20 @@ function BreakComponent(props) {
                             <Button onClick={() => props.setTrigger(false)} className='availability_closebtn'><IoCloseCircleOutline size={25} /></Button>
                         </OverlayTrigger>
                     ))}
-                    <h1 style={{ color: '#D3D3D3' }}>In-Break Engineers</h1>
+                    <h1 style={{ color: 'green' }}>Set status</h1>
                 </div>
                 <hr />
                 <div className='contentavail_div'>
                     <div className='casesdiv'>
-                        {engineers.map(eng => (
-                            <div>
-                                <h1>{eng.first_name} {eng.last_name}</h1>
-                                <h1>{eng.statusModified}</h1>
-                            </div>
-                        ))
-                        }
+                        <h1>Username</h1>
+                            <Button onClick={() => props.setTrigger(false)}>
+                                Set Availabile
+                            </Button>
                     </div>
                 </div>
             </div>
         </div>
     ) : "";
+}
 
-};
-
-export default BreakComponent;
+export default OnlineComponent;

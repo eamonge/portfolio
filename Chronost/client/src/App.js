@@ -5,35 +5,34 @@ import Col from 'react-bootstrap/Col';
 import NavbarComponent from './Components/Navbar/NavBarComponent';
 import HomeComponent from './Components/Home/Home';
 import LandingComponent from './Components/Landing/Landing';
+import EditHandover from './Components/Handovers/EditHandover';
 import HandoverComponent from './Components/Handovers/Handovers';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import React, { useState } from 'react';
-// import H
+import { Routes, Route, Navigate } from 'react-router-dom';
+import React, { useContext } from 'react';
+import axios from 'axios';
+import AuthContext from './context/AuthContext';
 
+axios.defaults.withCredentials = true;
 
 function App() {
-  const [landing, setLanding] = useState(true);
+  const { loggedIn } = useContext(AuthContext);
+  console.log(loggedIn);
 
   return (
     <div className="App">
       <Container fluid>
-        {/* <Row>
-          <Col>
-            <NavbarComponent />
-            <HomeComponent trigger={landing} setTrigger={setLanding}/>
-          </Col>
-        </Row> */}
         <Row>
           <Col>
-                <NavbarComponent></NavbarComponent>
+            <NavbarComponent></NavbarComponent>
           </Col>
         </Row>
         <Row>
           <Col className='contentCol'>
             <Routes>
-              <Route exact path='/' element={<HomeComponent />} />
+              <Route path='/edit-handover/:id' element={<EditHandover />}/>
+              <Route path='/handovers' element={loggedIn ? <HandoverComponent /> : <Navigate to='/'/>} />
               <Route path='/main' element={<LandingComponent />} />
-              <Route path='/handovers' element={<HandoverComponent />} />
+              <Route exact path='/' element={<HomeComponent />} />
             </Routes>
           </Col>
         </Row>

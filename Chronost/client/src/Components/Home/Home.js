@@ -1,29 +1,31 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import './Home.css';
-import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+
+const API_BASE = "http://localhost:5000";
 
 function HomeComponent(props) {
-    const [username, setUsername] = useState(""); 
+    const [email, setEmail] = useState(""); 
+    const [password, setPassword] = useState("");
 
-    function Login() {
-        var usr = document.getElementById('email').value;
-        var pwd = document.getElementById('password').value;
-        // let navigate = useNavigate();
-        // let path = '/main';
+    async function Login(e) {
+        e.preventDefault();
 
-        // alert(`The email is ${usr}!`);
+        try {
+            const loginData = {
+                email, 
+                password
+            };
+            await axios.post(`${API_BASE}/auth/login`, loginData);
 
-        if (usr == 'a' && pwd == 'b') {
-            console.log('Login successfull!');
-            // navigate.path(path);
-            localStorage.setItem("name", usr);
-            window.location.href = '/main';
-        } else {
-            console.log('Error!')
+            localStorage.setItem("email", loginData.email);
+
+            window.location.href='/main';
+        } catch (err) {
+            console.log(`Error is: ${err}`)
         }
-
     }
 
     return (
@@ -35,11 +37,11 @@ function HomeComponent(props) {
                 <Form className='LgFrm'>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Email address</Form.Label>
-                        <Form.Control type="text" id='email' />
+                        <Form.Control type="text" id='email' onChange={e => setEmail(e.target.value)} />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicPassword">
                         <Form.Label>Password</Form.Label>
-                        <Form.Control type="password" id='password' />
+                        <Form.Control type="password" id='password' onChange={e => setPassword(e.target.value)}  />
                     </Form.Group>
                     <Button variant="primary" type="button" onClick={Login}>
                         <span>

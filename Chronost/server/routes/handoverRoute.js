@@ -20,7 +20,7 @@ router.get('/:id', (req, res) => {
 });
 
 //Create new handover file
-router.post('/', auth, (req, res) => {
+router.post('/', auth, async (req, res) => {
     //POST placeholder
     (new Handover({
         "sr": req.body.sr,

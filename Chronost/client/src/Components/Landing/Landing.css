@@ -224,3 +224,17 @@
     left: 0;
     width: 100%;
 }
+
+.form-select {
+    background-color: rgba(0, 0, 0, 0)!important;
+    border: none!important;
+    box-shadow: none!important;
+    color: black!important;
+    font-size: 24pt!important;
+    width: 50%!important;
+    margin-left: 25%;
+    margin-right: 25%;
+    font-family: sans-serif!important;
+    font-weight: 400!important;
+    text-align: center!important;
+}

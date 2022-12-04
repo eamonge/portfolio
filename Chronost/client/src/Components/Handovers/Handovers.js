@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 // import Handove
 import HandoverListComponent from './HandoverList';
 import HandoverNoneComponent from './HandoverNone';
+import { Link } from 'react-router-dom';
 import Table from 'react-bootstrap/Table';
 import { IoTrashBinSharp, IoPencil } from "react-icons/io5";
 import './Handover.css';
@@ -16,8 +17,8 @@ function HandoverComponent() {
     const [handovers, setHandovers] = useState([]);
     const [createHandover, setCreateHandover] = useState(false);
 
-    const test = async id => {
-        window.alert(` El ID de este componente es: ${id}`)
+    const redirectOnClick = async id => {
+        window.location.href= `/edit-handover/${id}`;
     }
 
     const GetHandovers = () => {
@@ -65,7 +66,7 @@ function HandoverComponent() {
                                 <td>{hndvr.handover_justification}</td>
                                 <td>{hndvr.next_steps}</td>
                                 <td>{hndvr.subteam}</td>
-                                <td> <Button onClick={() => {  test(hndvr._id) }}><IoPencil size={20} /></Button> </td>
+                                <td> <Link to={'/edit-handover/'+`${hndvr._id}`} ><Button><IoPencil size={20} /></Button></Link> </td>
                                 <td> <Button onClick={() => { DeleteHandover(hndvr._id) }}><IoTrashBinSharp size={20} /></Button> </td>
                             </tr>
                         ))
