@@ -16,18 +16,18 @@ function CreateHndvrComponent(props) {
     const [newSteps, setNewSteps] = useState("");
     const [newSubTeam, setNewSubTeam] = useState("");
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
+    // const handleSubmit = (event) => {
+    //     event.preventDefault();
 
-        const newHandover = {
-            newSR,
-            newSeverity,
-            newType,
-            newJustification,
-            newSteps,
-            newSubTeam
-        }
-    }
+    //     const newHandover = {
+    //         newSR,
+    //         newSeverity,
+    //         newType,
+    //         newJustification,
+    //         newSteps,
+    //         newSubTeam
+    //     }
+    // }
 
     const addHandover = async () => {
         const data = await fetch(API_BASE + "/handovers", {

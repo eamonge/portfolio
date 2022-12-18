@@ -34,7 +34,7 @@ function LandingComponent() {
                 setUserData(res.data)
             })
     }
-    
+
     //Get all users with DM role
     const getDMs = async () => {
         axios.get(`${API_BASE}/auth/user/DM`)
@@ -44,6 +44,8 @@ function LandingComponent() {
     }
 
     useEffect(() => {
+        getData();
+        getDMs();
         const interval = setInterval(() => {
             getData();
             getDMs();
@@ -76,7 +78,7 @@ function LandingComponent() {
             <h1 style={{ textAlign: 'center' }}>Welcome {userdata.first_name} {userdata.last_name}</h1>
             {/* <h1 style={{ textAlign: 'center' }}>Current status after selection is: {currentStatus}</h1> */}
             <h1 style={{ textAlign: 'center' }}>Current status is: {userdata.status}
-                <Form.Select aria-label="Default select example" onChange={e => { updateStatus(userdata.email, e.target.value)}}>
+                <Form.Select aria-label="Default select example" onChange={e => { updateStatus(userdata.email, e.target.value) }}>
                     <option>{userdata.status}</option>
                     <option value="Offline" disabled>Offline</option>
                     <option value="Online">Online</option>
