@@ -7,6 +7,7 @@ import HomeComponent from './Components/Home/Home';
 import LandingComponent from './Components/Landing/Landing';
 import EditHandover from './Components/Handovers/EditHandover';
 import HandoverComponent from './Components/Handovers/Handovers';
+import TimeoutComponent from './Components/Timeout/TimeoutPage';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import React, { useContext } from 'react';
 import axios from 'axios';
@@ -31,6 +32,7 @@ function App() {
             <Routes>
               <Route path='/edit-handover/:id' element={<EditHandover />}/>
               <Route path='/handovers' element={loggedIn ? <HandoverComponent /> : <Navigate to='/'/>} />
+              <Route path='/timeout' element={<TimeoutComponent />} />
               <Route path='/main' element={<LandingComponent />} />
               <Route exact path='/' element={<HomeComponent />} />
             </Routes>

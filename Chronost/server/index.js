@@ -29,6 +29,9 @@ app.use('/handovers', require('./routes/handoverRoute'));
 //Test Route
 app.use('/test', require('./routes/testRoute'));
 
+//Test Route
+app.use('/timeout', require('./routes/timeoutRoute'));
+
 var PORT = 5000;
 app.listen(PORT, () => {
     console.log(`Listening on port ${PORT}!`)

@@ -45,10 +45,12 @@ function NavbarComponent() {
                     </Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                    <Nav.Link href="/home">
-                        <span>
-                            Timeouts
-                        </span>
+                    <Nav.Link>
+                        <Link to="/timeout">
+                            <span>
+                                Timeouts
+                            </span>
+                        </Link>
                     </Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
