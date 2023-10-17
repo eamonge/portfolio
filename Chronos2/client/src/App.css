@@ -1,0 +1,100 @@
+.App {
+  text-align: center;
+  background-color: #F7F9FB;
+}
+
+.appbar-main-menu {
+  /* background-color: rgba(0, 0, 0, 0)!important; */
+  background: #005C97;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #363795, #005C97);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #363795, #005C97);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  padding: 0;
+  margin: 0;
+}
+
+.gridview {
+  padding: 0!important;
+  margin: 0!important;
+}
+
+.grid-row {
+  padding: 0!important;
+  margin: 0!important;
+}
+
+.chartdataView {
+  height: 50vh!important;
+}
+
+.content-div {
+  background-color: white;
+  width: 50%;
+  margin-left: 25%;
+  min-height: 40%;
+  /* height: auto; */
+  border-radius: 20px;
+  color: #404A5B;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  border: solid 1px #D5DAE5;
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
+.bckgContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, .4);
+  width: 100vw;
+  height: 100vh;
+  z-index: 3;
+}
+
+.formContainer {
+  position: relative;
+  background-color: white;
+  width: 50%;
+  height: 100vh;
+  max-height: 65%;
+  overflow: hidden;
+  margin-top: 5%;
+  margin-left: 25%;
+  margin-right: 25%;
+  border-radius: 20px;
+  padding-bottom: 2rem;
+}
+
+.formContent {
+  height: 100%;
+  /* max-height: 65%; */
+  overflow: scroll;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+  /* padding: 1rem; */
+  /* margin: 2rem;
+  margin-bottom: 200px; */
+}
+
+.formContent .inputFollowUp {
+  width: 50%!important;
+  /* padding-bottom: 2rem; */
+  /* width: 1000px; */
+}
+
+.css-xn6ruc {
+  padding-bottom: 2.5rem;
+}
+
+.btnClose {
+  position: absolute!important;
+  top: 0;
+  right: 0;
+  color: red!important;
+}
+
+.btnClose:hover {
+  background-color: rgba(0, 0, 0, 0)!important;
+}

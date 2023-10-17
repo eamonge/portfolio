@@ -1,0 +1,147 @@
+/* .content-div {
+    background-color: white;
+    width: 50%;
+    margin-left: 25%;
+    min-height: 40%;
+    border-radius: 20px;
+    color: #404A5B;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    border: solid 1px #D5DAE5;
+    margin-bottom: 1rem;
+    padding: 1rem;
+} */
+
+.statusIcon {
+    background-color: gray;
+    width: 15px;
+    height: 15px;
+    border-radius: 200px;
+    align-content: center;
+    position: absolute;
+    right: 70%;
+    top: 20%;
+}
+
+.typography-dm {
+    position: relative;
+    width: 100%!important;
+    margin-left: 10%;
+}
+
+.typography-dm span::after{
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 200px;
+    left: 0;
+    top: 25%;
+}
+
+.online span::after {
+    background-color: green;
+}
+
+.break span::after {
+    background-color: yellow;
+}
+
+.lunch span::after {
+    background-color: orange;
+}
+
+.offline span::after {
+    background-color: gray;
+}
+
+.dm-availab-container {
+    text-align: center;
+}
+
+.dm-availab-container .content-typ-div {
+    width: 75%;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.assigned-sr-container {
+    position: relative;
+}
+
+.sr-typdiv {
+    position: absolute;
+    left: 15%;
+    width: 50%;
+}
+
+.sr-typdiv .numSpan {
+    position: absolute;
+    right: 0;
+}
+
+.engineer-container {
+    height: 70vh;
+    overflow: hidden;
+}
+
+.engineer-container .eng-typdiv::-webkit-scrollbar {
+    display: none;
+}
+
+.engineer-container .eng-typdiv {
+    height: 60vh;
+    overflow: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.online-accordion {
+    background: #DCE35B;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #45B649, #DCE35B);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #45B649, #DCE35B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+color: #404A5B!important;
+}
+
+.break-accordion {
+    background: #CAC531;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #F3F9A7, #CAC531);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #F3F9A7, #CAC531);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+color: #404A5B!important;
+}
+
+.lunch-accordion {
+    background: #fc4a1a;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #f7b733, #fc4a1a);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #f7b733, #fc4a1a);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+color: #404A5B!important;
+}
+
+.meeting-accordion {
+    background: #D31027;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #EA384D, #D31027);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #EA384D, #D31027);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+color: #404A5B!important;
+}
+
+.others-accordion {
+    background: #2193b0;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #6dd5ed, #2193b0);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #6dd5ed, #2193b0);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+color: #404A5B!important;
+}
+
+.engineer-accordion {
+    box-shadow: none!important;
+}

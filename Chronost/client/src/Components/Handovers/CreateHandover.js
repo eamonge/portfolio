@@ -95,7 +95,7 @@ function CreateHndvrComponent(props) {
                                 <Form.Label>Subteam</Form.Label>
                                 <Form.Control type="text" onChange={e => setNewSubTeam(e.target.value)}  />
                             </Form.Group>
-                            <Button variant="primary" type="submit" onClick={addHandover}>
+                            <Button variant="primary" type="button" onClick={addHandover}>
                                 Add handover
                             </Button>
                         </Form>

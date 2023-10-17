@@ -21,7 +21,7 @@ function AvailableComponent(props) {
     useEffect(() => {
         const interval = setInterval(() => {
             GetEngineers();
-        }, 180000);
+        }, 15000);
         return () => clearInterval(interval);
     }, []);
 

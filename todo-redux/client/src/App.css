@@ -1,0 +1,22 @@
+.div-content-table {
+  width: 50%;
+  height: auto;
+  margin: 10% 25% 0 25%;
+  padding: 10px;
+  /* border-radius: 20px; */
+  -webkit-box-shadow: 5px 5px 14px 0px rgba(0,0,0,0.51);
+-moz-box-shadow: 5px 5px 14px 0px rgba(0,0,0,0.51);
+box-shadow: 5px 5px 14px 0px rgba(0,0,0,0.51);
+}
+
+.todoview-div-content .btn {
+  width: 45%;
+  margin-top: 1rem;
+  margin-left: 2rem;
+  color: #D7DFE7;
+  background-color: #1F2831;
+}
+
+.selected {
+  background-color: coral;
+}
