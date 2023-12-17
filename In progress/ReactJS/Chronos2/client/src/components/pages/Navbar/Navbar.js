@@ -92,9 +92,11 @@ function NavbarComponent() {
                             </Link>
                         </Typography>
                         <Typography variant="h6" component="div" className='navbarpage-btn' sx={{ flexGrow: 0.2 }}>
-                            <Button disableRipple={true}>
-                                My Schedule
-                            </Button>
+                            <Link to="/myschedule">
+                                <Button disableRipple={true}>
+                                    My Schedule
+                                </Button>
+                            </Link>
                         </Typography>
                         {auth && (
                             <div>

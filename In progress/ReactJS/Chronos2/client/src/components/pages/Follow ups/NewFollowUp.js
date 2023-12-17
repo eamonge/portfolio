@@ -9,10 +9,10 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 
 function NewFUComponent(props) {
-    return(props.trigger) ? (
+    return (props.trigger) ? (
         <div className='bckgContainer'>
             <div className='formContainer'>
-                    <h1>Add Follow up</h1>
+                <h1>Add Follow up</h1>
                 <div className='formContent'>
                     <Tooltip title='Close' arrow>
                         <Button
@@ -31,7 +31,7 @@ function NewFUComponent(props) {
                         noValidate
                         autoComplete="off"
                     >
-                        <TextField id="outlined-basic" label="SR #" variant="outlined" className='inputFollowUp'/>
+                        <TextField id="outlined-basic" label="SR #" variant="outlined" className='inputFollowUp' />
                         <TextField id="outlined-basic" label="Type" variant="outlined" className='inputFollowUp' />
                         <TextField id="outlined-basic" label="Severity" variant="outlined" className='inputFollowUp' />
                         <TextField id="outlined-basic" label="Region" variant="outlined" className='inputFollowUp' />
@@ -42,14 +42,13 @@ function NewFUComponent(props) {
                         <TextField id="outlined-basic" label="Return date" variant="outlined" className='inputFollowUp' />
                         <TextField id="outlined-basic" label="Due date" variant="outlined" className='inputFollowUp' />
                         <TextField id="outlined-basic" label="Priority" variant="outlined" className='inputFollowUp' />
-                        {/* <TextField id="outlined-basic" label="SR #" variant="outlined" />
-                        <TextField id="outlined-basic" label="SR #" variant="outlined" /> */}
-                        {/* < br />
-                        < br />
-                        < br />
-                        < br />
-                        < br />
-                        < br /> */}
+                        <br/>
+                        <Button
+                            variant="text"
+                            className='btnAdd'
+                            disableRipple>
+                            Add Follow up
+                        </Button>
                     </Box>
                 </div>
             </div>

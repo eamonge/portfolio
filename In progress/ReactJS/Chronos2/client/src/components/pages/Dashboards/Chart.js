@@ -3,11 +3,11 @@ import {
     Chart,
     ArgumentAxis,
     ValueAxis,
-    BarSeries,
-    Title,
     Legend,
 } from '@devexpress/dx-react-chart-material-ui';
 import { Stack, Animation } from '@devexpress/dx-react-chart';
+// import { BarSeries } from '@devexpress/dx-react-chart-material-ui';
+import { BarSeries } from '@devexpress/dx-react-chart';
 
 const Root = props => (
     <Legend.Root {...props} sx={{ display: 'flex', margin: 'auto', flexDirection: 'row' }} />

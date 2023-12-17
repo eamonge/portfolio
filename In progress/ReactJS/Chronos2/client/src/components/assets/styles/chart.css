@@ -1,0 +1,8 @@
+.content-div {
+    margin-right: 15%!important;
+    margin-left: 15%!important;
+}
+
+.my-schedule-displaydiv tbody tr:nth-child(odd) {
+    /* background-color: #D3D3D3; */
+}
