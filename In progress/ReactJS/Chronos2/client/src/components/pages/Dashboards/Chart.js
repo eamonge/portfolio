@@ -1,29 +1,28 @@
 import React from 'react';
-import {
-    Chart,
-    ArgumentAxis,
-    ValueAxis,
-    Legend,
-} from '@devexpress/dx-react-chart-material-ui';
-import { Stack, Animation } from '@devexpress/dx-react-chart';
-// import { BarSeries } from '@devexpress/dx-react-chart-material-ui';
-import { BarSeries } from '@devexpress/dx-react-chart';
+// import {
+//     Chart,
+//     ArgumentAxis,
+//     ValueAxis,
+//     Legend,
+// } from '@devexpress/dx-react-chart-material-ui';
+// import { Stack, Animation } from '@devexpress/dx-react-chart';
+// import { BarSeries } from '@devexpress/dx-react-chart';
 
-const Root = props => (
-    <Legend.Root {...props} sx={{ display: 'flex', margin: 'auto', flexDirection: 'row' }} />
-);
-const Label = props => (
-    <Legend.Label {...props} sx={{ whiteSpace: 'nowrap' }} />
-);
+// const Root = props => (
+//     <Legend.Root {...props} sx={{ display: 'flex', margin: 'auto', flexDirection: 'row' }} />
+// );
+// const Label = props => (
+//     <Legend.Label {...props} sx={{ whiteSpace: 'nowrap' }} />
+// );
 
-function ChartAssignment(props) {
-    const chartData = props.data;
+function ChartAssignment() {
+    // const chartData = props.data;
 
     return (
         <div className='content-div'>
             <div>
                 <h1>Assigned cases</h1>
-                <Chart data={chartData} className='chartdataView'>
+                {/* <Chart data={chartData} className='chartdataView'>
                     <ArgumentAxis />
                     <ValueAxis />
                     <BarSeries
@@ -45,9 +44,8 @@ function ChartAssignment(props) {
                         color="#D51B1B"
                     />
                     <Animation />
-                    {/* <Legend position="bottom" rootComponent={Root} labelComponent={Label} /> */}
                     <Stack />
-                </Chart>
+                </Chart> */}
             </div>
         </div>
     );

@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap');
+
+@keyframes slideInFromLeft {
+    0% {
+        /* width: 10px; */
+        /* position: absolute;
+        left: -300; */
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+.login-form-div {
+    animation: slideInFromLeft 2s;
+    background-color: white;
+    width: 50%;
+    height: 60%;
+    border-radius: 20px;
+    position: relative;
+    left: 25%;
+    top: 5rem;
+    background: rgba(255, 255, 255, 0.22);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.login-form-div h1 {
+    font-family: 'Roboto Slab', serif;
+}
+
+.login-input {
+    background-color: rgba(58, 51, 65, .8)!important;
+    color: whitesmoke;
+}
+
+.login-input input {
+    color: whitesmoke
+}
+
+.login-input label {
+    color: whitesmoke!important;
+}
+
+.small-txt {
+    font-family: 'Roboto Slab', serif!important;
+}
+
+.login-form-div .login-btn {
+    background-color: #A770EF;
+}
+
+.login-form {
+    /* background-color: black; */
+    height: 50%;
+    line-height: 3.2rem;
+}

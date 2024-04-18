@@ -1,0 +1,132 @@
+.divLoginBackdrop {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 9999;
+    background-color: #1F2029;
+    width: 100vw;
+    height: 100vh;
+}
+
+.divLogin-content {
+    width: 50vw;
+    float: left;
+    /* border: solid 1px white; */
+    height: 100vh;
+    color: white;
+}
+
+.divLogin-right {
+    background: #CB356B;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #BD3F32, #CB356B);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #BD3F32, #CB356B);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.divLoginForm {
+    position: absolute;
+    border-radius: 20px;
+    border: solid 4px #CB356B;
+    height: 50vh;
+    width: 25vw;
+    left: 10%;
+    top: 25%;
+}
+
+.divLoginForm input {
+    color: whitesmoke;
+    border-bottom: solid 2px whitesmoke;
+    transition: all 300ms;
+}
+
+/* Active label */
+.css-1c2i806-MuiFormLabel-root-MuiInputLabel-root {
+    color: whitesmoke!important;
+}
+
+/* Unfocused label */
+.css-aqpgxn-MuiFormLabel-root-MuiInputLabel-root {
+    color: whitesmoke!important;
+}
+
+.divLoginForm .MuiInputBase-input:focus {
+    color: #CB356B;
+}
+
+.css-1c2i806-MuiFormLabel-root-MuiInputLabel-root.Mui-focused {
+    color: #CB356B!important;
+}
+
+.divLoginForm .btnLogin {
+    background-color: #CB356B;
+    width: 50%;
+    left: 25%;
+}
+
+#alertLoginWarning {
+    display: none;
+    height: auto;
+}
+
+#alertLoginError {
+    display: none;
+}
+
+.loginAlerts {
+    margin: 10px;
+}
+
+/* .divLoginForm input {
+    height: 45px;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 10px;
+    text-align: center;
+    border: solid 2px rgba(0, 0, 0, 0);
+    color: white;
+    transition: all 300ms;
+}
+
+.divLoginForm input:hover {
+    background-color: rgba(0, 0, 0, 0);
+    border: solid 3px #CB356B!important;
+    color: #BD3F32;
+}
+
+.divLoginForm input:focus {
+    background-color: rgba(0, 0, 0, 0);
+    border: solid 5px #CB356B!important;
+    box-shadow: none;
+} */
+
+
+/* .divLoginForm input:focus {
+    color: #CB356B!important;
+    border-color: crimson!important;
+    border-width: 2px;
+} */
+
+/* Focused label */
+/* .css-1jy569b-MuiFormLabel-root-MuiInputLabel-root.Mui-focused {
+    color: #CB356B!important;
+} */
+
+/* Unfocused label */
+/* .css-1jy569b-MuiFormLabel-root-MuiInputLabel-root {
+    color: whitesmoke!important;
+} */
+
+/* Overall border */
+/* .MuiOutlinedInput-notchedOutline {
+    border-color: whitesmoke!important;
+} */
+
+/* .divLoginForm input .MuiOutlinedInput-notchedOutline:hover {
+    border-color: aqua!important;
+}
+
+.MuiOutlinedInput-notchedOutline:focus {
+    border-color: greenyellow!important;
+    border-width: 2px;
+} */

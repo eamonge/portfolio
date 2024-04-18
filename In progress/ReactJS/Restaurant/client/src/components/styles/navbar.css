@@ -1,0 +1,36 @@
+.css-12i7wg6-MuiPaper-root-MuiDrawer-paper {
+    background-color: #1F2029!important;
+    color: white!important;
+}
+
+.navbar-bar {
+    background: #8A2387;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #F27121, #E94057, #8A2387);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #F27121, #E94057, #8A2387);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.contentproductos-acc {
+    background-color: rgba(0, 0, 0, 0)!important;
+    color: white!important
+}
+
+.icon-navbar {
+    color: white;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.navLink {
+    width: 100%;
+    transition: all 300ms;
+}
+
+.navLink:hover {
+    background-color: #E94057;
+}

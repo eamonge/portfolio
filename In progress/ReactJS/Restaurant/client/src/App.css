@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Glegoo:wght@400;700&family=Roboto+Slab&display=swap');
+
+.App {
+  text-align: center;
+  position: relative;
+}
+
+.contentdiv-display {
+  background-color: white;
+  /* margin: 0.5rem; */
+}
+
+.contentproductos-acc {
+  /* background-color: bisque!important; */
+  /* width: 1000px!important; */
+  box-shadow: none!important;
+  
+}
+
+table {
+  width: 100%;
+  height: 100%;
+  /* display: flexbox; */
+}
+
+table thead {
+  background: #1F2029;
+  color: white;
+}
+
+table thead tr {
+  height: 75px;
+}
+
+table tbody tr:nth-child(odd) {
+  background-color: #f0f2f7;
+}
+
+table tbody tr {
+  height: 75px;
+  padding: 0;
+  margin: 0;
+}
+
+.tableDivContent {
+  height: 65vh;
+  overflow: scroll;
+}
