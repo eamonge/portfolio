@@ -1,8 +1,18 @@
 import { Button } from '@mui/material';
 import React from 'react';
 import CancelIcon from '@mui/icons-material/Cancel';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import FormControl from '@mui/material/FormControl';
+import FormLabel from '@mui/material/FormLabel';
 
 function AgregarRestauranteComponent(props) {
+    const [activo, setActivo] = React.useState("");
+
     const handleClose = () => {
         let message = "¿Deseas cerrar la ventana? ¡Perderás todos los datos!";
 
@@ -11,15 +21,46 @@ function AgregarRestauranteComponent(props) {
         }
     };
 
+    const handleChange = (event) => {
+        setActivo(event.target.value);
+    };
+
     return (props.trigger) ? (
         <div className='addmodalBackdrop'>
             <div className='addmodalContent'>
-                <Button variant="text" className='exitBtnModal'>
+                <Button
+                    variant="text"
+                    className='exitBtnModal'
+                    onClick={handleClose}
+                    style={{ position: 'absolute', right: '0'}}
+                >
                     <CancelIcon />
                 </Button>
-                <h1>Agregar restaurante</h1>
+                <br />
+                <h1 className='componentTitleH1'>Agregar restaurante</h1>
+                <h1 className='componentTitleH1'>Gender is: {activo}</h1>
                 <form>
+                    <TextField id="outlined-basic" label="Nombre" variant="outlined" />
+                    <TextField id="outlined-basic" label="Especialidad" variant="outlined" />
+                    <TextField id="outlined-basic" label="Dirección" variant="outlined" />
+                    <TextField id="outlined-basic" label="Teléfono" variant="outlined" />
+                    <FormControl>
+                        {/* <FormLabel id="demo-controlled-radio-buttons-group">Activo</FormLabel> */}
+                        <RadioGroup
+                            aria-labelledby="demo-controlled-radio-buttons-group"
+                            name="controlled-radio-buttons-group"
+                            value={activo}
+                            onChange={handleChange}
+                        >
+                            <FormControlLabel value="Activo" control={<Radio />} label="Activo" />
+                            <FormControlLabel value="Inactivo" control={<Radio />} label="Inactivo" />
+                        </RadioGroup>
+                    </FormControl>
+                    <br />
+                    <br />
                     <Button variant="contained" className='btnModal'>Agregar restaurante</Button>
+                    <br />
+                    <br />
                     <Button variant="contained" className='btnModal btnModalCancel' onClick={handleClose}>Cancelar</Button>
                 </form>
             </div>

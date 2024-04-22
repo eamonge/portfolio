@@ -29,10 +29,11 @@
     position: absolute;
     border-radius: 20px;
     border: solid 4px #CB356B;
-    height: 50vh;
+    height: auto;
     width: 25vw;
     left: 10%;
     top: 25%;
+    padding-bottom: 2rem;
 }
 
 .divLoginForm input {

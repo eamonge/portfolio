@@ -1,41 +1,5 @@
-.btnRestaurante {
-    background-color: #E94057!important;
-    width: 100%;
-    margin: 5px!important;
-}
-
-.addmodalBackdrop {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, .89);
-    z-index: 9999;
-}
-
-.addmodalContent {
-    position: relative;
-    background-color: #BEC3CC;
-    width: 50vw;
-    height: 65vh;
-    top: 10%;
-    left: 25%;
-}
-
-.exitBtnModal {
-    background-color: #E94057;
-    color: #E94057!important;
-    position: absolute!important;
-    right: 0!important;
-}
-
-.btnModal {
-    background-color: #1F2029!important;
-    width: 25%;
-    margin: 5px!important;
-}
-
-.btnModalCancel {
-    background-color: #E94057!important;
+.addRest-btn {
+    background-color: #1F2029;
+    color: #f0f2f7;
+    float: right;
 }

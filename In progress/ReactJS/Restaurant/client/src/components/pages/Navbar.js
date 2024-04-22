@@ -177,12 +177,38 @@ function NavbarComponent() {
                     <Typography variant="h6" noWrap component="div">
                         Restaurante Panel Control
                     </Typography>
-                    <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }} style={{position: 'absolute', right: '6rem'}}>
-                        <Avatar alt={userNameVal} src="/static/images/avatar/2.jpg" />
+                    <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }} style={{position: 'absolute', right: '1rem'}}>
+                        <Avatar className='btnIconNavbar' alt={userNameVal} src="/static/images/avatar/2.jpg" />
                     </IconButton>
-                    <Button variant="text" style={{position: 'absolute', right: '2rem', color: 'white'}} onClick={handleLogout}>
-                        <LogoutIcon />
-                    </Button>
+                    <Menu
+                        sx={{ mt: '45px' }}
+                        id="menu-appbar"
+                        anchorEl={anchorElUser}
+                        anchorOrigin={{
+                            vertical: 'top',
+                            horizontal: 'right',
+                        }}
+                        keepMounted
+                        transformOrigin={{
+                            vertical: 'top',
+                            horizontal: 'right',
+                        }}
+                        open={Boolean(anchorElUser)}
+                        onClose={handleCloseUserMenu}
+                    >
+                        <MenuItem onClick={handleCloseUserMenu}>
+                            <Typography textAlign="center">Profile</Typography>
+                        </MenuItem>
+                        <MenuItem onClick={handleCloseUserMenu}>
+                            <Typography textAlign="center">Account</Typography>
+                        </MenuItem>
+                        <MenuItem onClick={handleCloseUserMenu}>
+                            <Typography textAlign="center">Dashboard</Typography>
+                        </MenuItem>
+                        <MenuItem onClick={() => { handleCloseUserMenu(); handleLogout() }}>
+                            <Typography textAlign="center">Logout</Typography>
+                        </MenuItem>
+                    </Menu>
                 </Toolbar>
             </AppBar>
             <Drawer
@@ -197,7 +223,6 @@ function NavbarComponent() {
                 variant="persistent"
                 anchor="left"
                 open={open}
-            // style={{color: 'teal'}}
             >
                 <DrawerHeader>
                     <IconButton onClick={handleDrawerClose}>
