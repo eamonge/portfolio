@@ -32,13 +32,12 @@ function AgregarRestauranteComponent(props) {
                     variant="text"
                     className='exitBtnModal'
                     onClick={handleClose}
-                    style={{ position: 'absolute', right: '0'}}
+                    style={{ position: 'absolute', right: '0', color: '#BD3F32'}}
                 >
                     <CancelIcon />
                 </Button>
                 <br />
                 <h1 className='componentTitleH1'>Agregar restaurante</h1>
-                <h1 className='componentTitleH1'>Gender is: {activo}</h1>
                 <form>
                     <TextField id="outlined-basic" label="Nombre" variant="outlined" />
                     <TextField id="outlined-basic" label="Especialidad" variant="outlined" />
@@ -58,10 +57,10 @@ function AgregarRestauranteComponent(props) {
                     </FormControl>
                     <br />
                     <br />
-                    <Button variant="contained" className='btnModal'>Agregar restaurante</Button>
+                    <Button variant="contained" className='btnModal' style={{backgroundColor: '#85D502', color: '#1F2029'}}>Agregar restaurante</Button>
                     <br />
                     <br />
-                    <Button variant="contained" className='btnModal btnModalCancel' onClick={handleClose}>Cancelar</Button>
+                    <Button variant="contained" className='btnModal btnModalCancel' onClick={handleClose} style={{backgroundColor: '#CB356B', color: '#f0f2f7'}}>Cancelar</Button>
                 </form>
             </div>
         </div>

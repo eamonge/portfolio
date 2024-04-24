@@ -33,9 +33,8 @@ function LoginComponent() {
     }
     return (
         <div className='divLoginBackdrop'>
-            <div className='divLogin-content'>
+            <div className='divLogin-content divLogin-left'>
                 <div className='divLoginForm'>
-                    <h1>Login</h1>
                     <form onSubmit={handleSubmit}>
                         <Box
                             component="form"

@@ -3,26 +3,102 @@
     left: 0;
     top: 0;
     z-index: 9999;
-    background-color: #1F2029;
     width: 100vw;
+    height: 100vh;
+    background: #CB356B;
+    background: -webkit-linear-gradient(to right, #BD3F32, #CB356B);
+    background: linear-gradient(to right, #BD3F32, #CB356B);
+}
+
+.divLogin-left {
+    position: absolute;
+    top: 0;
+    background-color: #1F2029;
+    width: 50vw;
     height: 100vh;
 }
 
+.divLogin-right {
+    position: absolute;
+    top: 0;
+    right: 0; 
+    width: 50%;
+}
+
+.divLoginForm {
+    position: absolute;
+    border: solid 2px #CB356B;
+    height: auto;
+    top: 25%;
+    width: 50%;
+    left: 25%;
+    border-radius: 10px;
+    /* padding-right: 5px;
+    padding-left: 5px; */
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+#alertLoginWarning {
+    display: none;
+    height: auto;
+}
+
+#alertLoginError {
+    display: none;
+}
+
+.loginAlerts {
+    margin: 10px;
+}
+
+.btnLogin {
+    margin-left: 10%!important;
+    margin-right: 10%!important;
+    width: 80%!important;
+    background: #CB356B;
+    background: -webkit-linear-gradient(to right, #BD3F32, #CB356B);
+    background: linear-gradient(to right, #BD3F32, #CB356B);
+}
+
+.css-aqpgxn-MuiFormLabel-root-MuiInputLabel-root {
+    color: #EBEBEB!important;
+}
+
+.css-1x51dt5-MuiInputBase-input-MuiInput-input {
+    color: #EBEBEB!important;
+ }
+
+ /* Label with text in input */
+ .css-1c2i806-MuiFormLabel-root-MuiInputLabel-root {
+    color: #EBEBEB!important;
+ }
+
+ .css-1x51dt5-MuiInputBase-input-MuiInput-input {
+    width: 100%!important;
+ }
+
+
+/* 
+
+
+
 .divLogin-content {
-    width: 50vw;
     float: left;
-    /* border: solid 1px white; */
     height: 100vh;
     color: white;
 }
 
+.divLogin-left {
+    background-color: teal;
+    width: 50vw;
+}
+
 .divLogin-right {
-    background: #CB356B;
-    /* fallback for old browsers */
+    /* background: #CB356B;
     background: -webkit-linear-gradient(to right, #BD3F32, #CB356B);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #BD3F32, #CB356B);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, #BD3F32, #CB356B); 
+    width: 50%;
 }
 
 .divLoginForm {
@@ -30,10 +106,14 @@
     border-radius: 20px;
     border: solid 4px #CB356B;
     height: auto;
-    width: 25vw;
-    left: 10%;
+    width: 50%;
     top: 25%;
     padding-bottom: 2rem;
+}
+
+.divLoginForm form {
+    width: 100%;
+    margin: 5px;
 }
 
 .divLoginForm input {
@@ -42,12 +122,12 @@
     transition: all 300ms;
 }
 
-/* Active label */
+/* Active label 
 .css-1c2i806-MuiFormLabel-root-MuiInputLabel-root {
     color: whitesmoke!important;
 }
 
-/* Unfocused label */
+/* Unfocused label 
 .css-aqpgxn-MuiFormLabel-root-MuiInputLabel-root {
     color: whitesmoke!important;
 }
@@ -79,55 +159,6 @@
     margin: 10px;
 }
 
-/* .divLoginForm input {
-    height: 45px;
-    background-color: rgba(0, 0, 0, 0);
-    border-radius: 10px;
-    text-align: center;
-    border: solid 2px rgba(0, 0, 0, 0);
-    color: white;
-    transition: all 300ms;
-}
-
-.divLoginForm input:hover {
-    background-color: rgba(0, 0, 0, 0);
-    border: solid 3px #CB356B!important;
-    color: #BD3F32;
-}
-
-.divLoginForm input:focus {
-    background-color: rgba(0, 0, 0, 0);
-    border: solid 5px #CB356B!important;
-    box-shadow: none;
-} */
 
 
-/* .divLoginForm input:focus {
-    color: #CB356B!important;
-    border-color: crimson!important;
-    border-width: 2px;
-} */
-
-/* Focused label */
-/* .css-1jy569b-MuiFormLabel-root-MuiInputLabel-root.Mui-focused {
-    color: #CB356B!important;
-} */
-
-/* Unfocused label */
-/* .css-1jy569b-MuiFormLabel-root-MuiInputLabel-root {
-    color: whitesmoke!important;
-} */
-
-/* Overall border */
-/* .MuiOutlinedInput-notchedOutline {
-    border-color: whitesmoke!important;
-} */
-
-/* .divLoginForm input .MuiOutlinedInput-notchedOutline:hover {
-    border-color: aqua!important;
-}
-
-.MuiOutlinedInput-notchedOutline:focus {
-    border-color: greenyellow!important;
-    border-width: 2px;
-} */
+*/

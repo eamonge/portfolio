@@ -12,6 +12,10 @@
   .addmodalContent { padding: 0.5rem;}
   .addmodalContent button { width: 75px; font-size: 7pt;}
   .addmodalContent input { font-size: 12pt; padding: 1rem; }
+  .css-1u3bzj6-MuiFormControl-root-MuiTextField-root { margin: 10px!important; font-size: 8pt!important;}
+  .divLoginForm input {width: 50%; font-size: 8pt;}
+  .css-1eed5fa-MuiInputBase-root-MuiInput-root { width: 50%;  font-size: 8pt;}
+  .css-pl8gqh-MuiStack-root>:not(style):not(style) { font-size: 8pt; }
 
 
 }
@@ -67,7 +71,7 @@ table tbody tr:nth-child(odd) {
 .restaurantesContentdiv-comp button {
   padding: 0.5em;
   border: none;
-  border-radius: 2px;
+  border-radius: 5px;
 }
 
 .addmodalBackdrop {
@@ -89,4 +93,22 @@ table tbody tr:nth-child(odd) {
   top: 25%;
   overflow: scroll;
   border-radius: 10px;
+}
+
+.restauranteComp-btn {
+  background-color: #CB356B;
+  margin: 1rem;
+  width: 35%;
+  color: white;
+}
+
+.contentDisplay-div {
+  background-color: #FFFFFF;
+  padding: 1rem;
+  border-radius: 20px;
+  -webkit-box-shadow: 0px 6px 7px -3px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0px 6px 7px -3px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 6px 7px -3px rgba(0, 0, 0, 0.4);
+  margin-bottom: 1rem;
+  width: 100%;
 }

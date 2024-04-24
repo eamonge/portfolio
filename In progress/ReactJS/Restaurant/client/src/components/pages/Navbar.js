@@ -252,12 +252,14 @@ function NavbarComponent() {
                         </Link>
                     </ListItem>
                     <ListItem disablePadding>
-                        <ListItemButton>
-                            <ListItemIcon>
-                                <AdminPanelSettingsIcon className='icon-navbar' />
-                            </ListItemIcon>
-                            <ListItemText primary={'Administración'} />
-                        </ListItemButton>
+                        <Link to='/administracion' className='navLink'>
+                            <ListItemButton>
+                                <ListItemIcon>
+                                    <AdminPanelSettingsIcon className='icon-navbar' />
+                                </ListItemIcon>
+                                <ListItemText primary={'Administración'} />
+                            </ListItemButton>
+                        </Link>
                     </ListItem>
                     <ListItem disablePadding>
                         <ListItemButton>

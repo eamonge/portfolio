@@ -90,36 +90,22 @@ function RestaurantesComponent() {
             valueMonthMoney: "$80"
         }
     ]
-    
+
     return (
-        <div className='restaurantesContentdiv-comp' style={{textAlign: 'center'}}>
-            <h1 className='componentTitleH1'>Restaurantes component</h1>
+        <div className='restaurantesContentdiv-comp contentDisplay-div' style={{ textAlign: 'center' }}>
             <button className='addRest-btn' onClick={() => { setRestaurantePopup(true) }}>
                 <AddIcon />
             </button>
-            {/* <Button
-                variant="contained"
-                className='btnRestaurante btnRestaurante-add'
-                style={{textAlign: 'center'}}
-                >
-                    <AddIcon />
-            </Button> */}
             <br />
             <br />
             <RestauranteViewComponent columnsData={columns} rowsData={rows} />
-            <button>
-                +
+            <button className='restauranteComp-btn'>
+                Abrir caja
             </button>
-            <button>
-                <AddIcon />
+            <button className='restauranteComp-btn'>
+                Cerrar caja
             </button>
-            {/* <Stack spacing={2} direction="row">
-                <Button variant="contained" className='btnRestaurante'>Abrir caja</Button>
-            </Stack>
-            <Stack spacing={2} direction="row">
-                <Button variant="contained" className='btnRestaurante'>Cerrar caja</Button>
-            </Stack> */}
-            <AgregarRestauranteComponent trigger={restaurantePopup} setTrigger={setRestaurantePopup}/>
+            <AgregarRestauranteComponent trigger={restaurantePopup} setTrigger={setRestaurantePopup} />
         </div>
     );
 };
