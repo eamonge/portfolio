@@ -28,17 +28,7 @@ function RestauranteViewComponent(props) {
                             </tr>
                         ))
                     }
-                    <tr>
-                        <td>February</td>
-                        <td>$80</td>
-                    </tr>
                 </tbody>
-                {/* <tfoot>
-                    <tr>
-                        <td>Sum</td>
-                        <td>$180</td>
-                    </tr>
-                </tfoot> */}
             </table>
         </div>
     );

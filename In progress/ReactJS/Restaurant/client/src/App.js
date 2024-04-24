@@ -15,7 +15,7 @@ const Item = styled(Paper)(({ theme }) => ({
 
 function App() {
   return (
-    <div className="App" style={{ padding: '0.4em' }}>
+    <div className="App" style={{ padding: '0.4em', backgroundColor: '#FAFAFA', height: '100vh' }}>
       <Box sx={{ flexGrow: 1 }}>
         <Grid container spacing={1}>
           <Grid xs={12}>

@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import RestauranteViewComponent from './ViewRestaurante';
 import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
+// import Button from '@mui/material/Button';
 import AgregarRestauranteComponent from './AgregarRestaurantes';
+import AddIcon from '@mui/icons-material/Add';
+import '../../styles/restaurantes.css';
 
 function RestaurantesComponent() {
     const [restaurantePopup, setRestaurantePopup] = useState(false);
@@ -78,29 +80,32 @@ function RestaurantesComponent() {
         {
             valueMonthName: "Febuary",
             valueMonthMoney: "$80"
+        },
+        {
+            valueMonthName: "Febuary",
+            valueMonthMoney: "$80"
+        },
+        {
+            valueMonthName: "Febuary",
+            valueMonthMoney: "$80"
         }
     ]
-    
+
     return (
-        <div>
-            <h1>Restaurantes component</h1>
+        <div className='restaurantesContentdiv-comp contentDisplay-div' style={{ textAlign: 'center' }}>
+            <button className='addRest-btn' onClick={() => { setRestaurantePopup(true) }}>
+                <AddIcon />
+            </button>
+            <br />
+            <br />
             <RestauranteViewComponent columnsData={columns} rowsData={rows} />
-            <Stack spacing={2} direction="row">
-                <Button
-                    variant="contained"
-                    className='btnRestaurante'
-                    onClick={() => setRestaurantePopup(true)}
-                >
-                    Agregar Restaurante
-                </Button>
-            </Stack>
-            <Stack spacing={2} direction="row">
-                <Button variant="contained" className='btnRestaurante'>Abrir caja</Button>
-            </Stack>
-            <Stack spacing={2} direction="row">
-                <Button variant="contained" className='btnRestaurante'>Cerrar caja</Button>
-            </Stack>
-            <AgregarRestauranteComponent trigger={restaurantePopup} setTrigger={setRestaurantePopup}/>
+            <button className='restauranteComp-btn'>
+                Abrir caja
+            </button>
+            <button className='restauranteComp-btn'>
+                Cerrar caja
+            </button>
+            <AgregarRestauranteComponent trigger={restaurantePopup} setTrigger={setRestaurantePopup} />
         </div>
     );
 };
