@@ -99,73 +99,7 @@ const rows = [
         valueItemB: "Test2",
         valueItemC: "Test3",
         valueItemD: "Test4"
-    },
-    {
-        valueItemA: "Test1",
-        valueItemB: "Test2",
-        valueItemC: "Test3",
-        valueItemD: "Test4"
-    },
-    {
-        valueItemA: "Test1",
-        valueItemB: "Test2",
-        valueItemC: "Test3",
-        valueItemD: "Test4"
-    },
-    {
-        valueItemA: "Test1",
-        valueItemB: "Test2",
-        valueItemC: "Test3",
-        valueItemD: "Test4"
-    },
-    {
-        valueItemA: "Test1",
-        valueItemB: "Test2",
-        valueItemC: "Test3",
-        valueItemD: "Test4"
-    },
-    {
-        valueItemA: "Test1",
-        valueItemB: "Test2",
-        valueItemC: "Test3",
-        valueItemD: "Test4"
-    },
-    {
-        valueItemA: "Test1",
-        valueItemB: "Test2",
-        valueItemC: "Test3",
-        valueItemD: "Test4"
-    },
-    {
-        valueItemA: "Test1",
-        valueItemB: "Test2",
-        valueItemC: "Test3",
-        valueItemD: "Test4"
-    },
-    {
-        valueItemA: "Test1",
-        valueItemB: "Test2",
-        valueItemC: "Test3",
-        valueItemD: "Test4"
-    },
-    {
-        valueItemA: "Test1",
-        valueItemB: "Test2",
-        valueItemC: "Test3",
-        valueItemD: "Test4"
-    },
-    {
-        valueItemA: "Test1",
-        valueItemB: "Test2",
-        valueItemC: "Test3",
-        valueItemD: "Test4"
-    },
-    {
-        valueItemA: "Test1",
-        valueItemB: "Test2",
-        valueItemC: "Test3",
-        valueItemD: "Test4"
-    },
+    }
 ];
 
 function BebidasComponent() {
@@ -191,16 +125,16 @@ function BebidasComponent() {
                     <BebCalientesComponent columnsData={columns} rowsData={rows} />
                 </CustomTabPanel>
                 <CustomTabPanel value={value} index={1}>
-                    <BebFriasComponent />
+                    <BebFriasComponent columnsData={columns} rowsData={rows}/>
                 </CustomTabPanel>
                 <CustomTabPanel value={value} index={2}>
-                    <GaseosasComponent />
+                    <GaseosasComponent columnsData={columns} rowsData={rows} />
                 </CustomTabPanel>
                 <CustomTabPanel value={value} index={3}>
-                    <LicoresComponent />
+                    <LicoresComponent columnsData={columns} rowsData={rows} />
                 </CustomTabPanel>
                 <CustomTabPanel value={value} index={4}>
-                    <VinosComponent />
+                    <VinosComponent columnsData={columns} rowsData={rows} />
                 </CustomTabPanel>
             </Box>
         </div>

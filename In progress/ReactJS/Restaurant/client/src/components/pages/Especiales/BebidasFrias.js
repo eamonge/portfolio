@@ -1,10 +1,13 @@
 import React from 'react';
-import ViewTableComponent from '../Administración/ViewTable';
+import ViewTableComponent from './ViewTable';
 
-function BebFriasComponent() {
+function BebFriasComponent(props) {
+    const columns = props.columnsData;
+    const rows = props.rowsData;
+
     return(
         <div>
-            <h1>Frías</h1>
+            <ViewTableComponent columnsData={columns} rowsData={rows}/>
         </div>
     );
 };
