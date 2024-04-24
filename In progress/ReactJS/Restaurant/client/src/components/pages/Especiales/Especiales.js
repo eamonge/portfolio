@@ -4,9 +4,11 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import BebidasComponent from './Bebidas';
+import BufetComponent from './Bufet';
 
 //importing Table View
-import ViewTableComponent from './ViewTable';
+import ViewTableComponent from '../Administración/ViewTable';
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -48,75 +50,6 @@ function EspecialesComponent() {
       setValue(newValue);
     };
 
-    const columns = [
-        {
-            valueColumns: "ID"
-        }, 
-        {
-            valueColumns: "Nombre"
-        }, 
-        {
-            valueColumns: "Precio"
-        }, 
-        {
-            valueColumns: "Tipo"
-        }, 
-        {
-            valueColumns: "Unidad de medida"
-        },
-        {
-            valueColumns: ""
-        },
-        {
-            valueColumns: ""
-        }
-    ];
-
-    const rows = [
-        {
-            valuyeItemA: "Test",
-            valueItemB: "Test2",
-            valueItemC: "Test3",
-            valueItemD: "Test4",
-            valueItemE: "Test5"
-        },
-        {
-            valuyeItemA: "Test",
-            valueItemB: "Test2",
-            valueItemC: "Test3",
-            valueItemD: "Test4",
-            valueItemE: "Test5"
-        },
-        {
-            valuyeItemA: "Test",
-            valueItemB: "Test2",
-            valueItemC: "Test3",
-            valueItemD: "Test4",
-            valueItemE: "Test5"
-        },
-        {
-            valuyeItemA: "Test",
-            valueItemB: "Test2",
-            valueItemC: "Test3",
-            valueItemD: "Test4",
-            valueItemE: "Test5"
-        },
-        {
-            valuyeItemA: "Test",
-            valueItemB: "Test2",
-            valueItemC: "Test3",
-            valueItemD: "Test4",
-            valueItemE: "Test5"
-        },
-        {
-            valuyeItemA: "Test",
-            valueItemB: "Test2",
-            valueItemC: "Test3",
-            valueItemD: "Test4",
-            valueItemE: "Test5"
-        }
-    ];
-
 
 
     return (
@@ -131,10 +64,10 @@ function EspecialesComponent() {
                     </Tabs>
                 </Box>
                 <CustomTabPanel value={value} index={0}>
-                    <ViewTableComponent columnsData={columns} rowsData={rows} />
+                    <BufetComponent />
                 </CustomTabPanel>
                 <CustomTabPanel value={value} index={1}>
-                    Bebidas
+                    <BebidasComponent />                    
                 </CustomTabPanel>
                 <CustomTabPanel value={value} index={2}>
                     Especialidades

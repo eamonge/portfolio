@@ -1,5 +1,5 @@
 import React from 'react';
-import EspecialesComponent from './Especiales';
+import EspecialesComponent from '../Especiales/Especiales';
 
 function AdministracionComponent() {
     return (
