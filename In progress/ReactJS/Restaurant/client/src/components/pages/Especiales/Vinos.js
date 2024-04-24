@@ -1,10 +1,13 @@
 import React from 'react';
-import ViewTableComponent from '../Administración/ViewTable';
+import ViewTableComponent from './ViewTable';
 
-function VinosComponent() {
+function VinosComponent(props) {
+    const columns = props.columnsData;
+    const rows = props.rowsData;
+
     return(
         <div>
-            <h1>Vinos</h1>
+            <ViewTableComponent columnsData={columns} rowsData={rows}/>
         </div>
     );
 };

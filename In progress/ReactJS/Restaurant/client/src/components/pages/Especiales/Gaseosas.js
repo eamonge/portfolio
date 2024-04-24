@@ -1,10 +1,13 @@
 import React from 'react';
-import ViewTableComponent from '../Administración/ViewTable';
+import ViewTableComponent from './ViewTable';
 
-function GaseosasComponent() {
-    return(
+function GaseosasComponent(props) {
+    const columns = props.columnsData;
+    const rows = props.rowsData;
+
+    return (
         <div>
-            <h1>Gaseosas</h1>
+            <ViewTableComponent columnsData={columns} rowsData={rows} />
         </div>
     );
 };
