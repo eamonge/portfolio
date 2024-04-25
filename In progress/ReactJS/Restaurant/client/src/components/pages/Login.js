@@ -45,6 +45,7 @@ function LoginComponent() {
                             autoComplete="off"
                         >
                             <TextField id="usernameInput" label="Username" variant="standard" className='loginUsernameInput'/>
+                            <br />
                             <TextField id="passwordInput" label="Password" variant="standard" type='password' className='loginUsernameInput' />
                         </Box>
                         <Stack spacing={2} direction="row">

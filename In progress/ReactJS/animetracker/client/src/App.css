@@ -1,38 +1,150 @@
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 700px) {
+  .MuiTypography-h3 {  font-size: 11pt !important; }
+  .css-lbjakd-MuiStack-root>:not(style):not(style) { height: auto; }
+  .css-1pxa9xg-MuiAlert-message { font-size: 9pt ;}
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}
+
 .App {
   text-align: center;
+  position: relative;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.backdropDiv {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #1B1F24;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.leftLoginDiv {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 50vw;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.rightLoginDiv {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50vw;
+  height: 100vh;
+  background: #c0392b;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #8e44ad, #c0392b);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #8e44ad, #c0392b);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.App-link {
-  color: #61dafb;
+.loginContent {
+  position: absolute;
+  top: 25%;
+  border: solid 2px #8e44ad;
+  width: 65%;
+  height: auto;
+  left: 13%;
+  border-radius: 10px;
+  padding: 0.5rem;
+  color: whitesmoke;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.inputLgns {
+  width: 90%;
+  background-color: rgba(0, 0, 0, 0);
+  box-shadow: none;
+  border: none;
+  border-bottom: solid 2px #8e44ad;
+  color: whitesmoke;
+}
+
+.dataInput-alert {
+  display: none!important;
+  margin: 8px 0 5px 0;
+  /* margin: 5px; */
+}
+
+.loginContent button {
+  margin-top: 10px;
+  background-color: #8e44ad;
+  border: none;
+  padding: 10px;
+  font-size: 12pt;
+  color: whitesmoke;
+  transition: all 300ms;
+  /* border: solid 2px #8e44ad; */
+}
+
+.loginContent button:hover {
+  background-color: whitesmoke;
+  color: #8e44ad;
+}
+
+.loginInputs {
+  color: whitesmoke;
+  margin-bottom: 1rem!important;
+}
+
+/* With text labels */
+.css-1c2i806-MuiFormLabel-root-MuiInputLabel-root {
+  color: whitesmoke!important;
+}
+
+/* Written input text */
+.css-1x51dt5-MuiInputBase-input-MuiInput-input {
+  color: whitesmoke!important;
+}
+
+/* No written input lables */
+.css-aqpgxn-MuiFormLabel-root-MuiInputLabel-root {
+  color: whitesmoke!important;
+}
+
+/* Input border bottom */
+.css-1eed5fa-MuiInputBase-root-MuiInput-root {
+  border-bottom: solid 1px whitesmoke;
+  box-shadow: none!important;
+}
+
+table {
+  width: 50%;
+  height: 100%;
+  padding: 3px;
+  border: solid 1px #1B1F24;
+}
+
+table thead {
+  color: #1B1F24;
+}
+
+table tbody tr {
+  margin: 0;
+  padding: 0;
+}
+
+table tbody tr:nth-child(odd) {
+  background-color: #EBEBEB;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #D7D7D7;
+}
+
+.tableDivContent {
+  height: 40vh;
+  width: 100%;
+  overflow: scroll;
 }
