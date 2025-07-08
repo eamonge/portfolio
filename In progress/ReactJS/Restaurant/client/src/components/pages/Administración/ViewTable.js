@@ -5,6 +5,13 @@ import DeleteIcon from '@mui/icons-material/Delete';
 function ViewTableComponent(props) {
     const columns = props.columnsData;
     const rows = props.rowsData;
+
+    // for (var i = 0; i < 10; i++) {
+    //     console.log(i);
+    // }
+
+    // setId();ss
+
     return(
         <div className='tableDivContent'>
             <table>
@@ -16,36 +23,22 @@ function ViewTableComponent(props) {
                             ))
 
                         }
-
-                        {/* {columns.map(head => (
-                            <th>{head.value}</th>
-                        ))} */}
                     </tr>
                 </thead>
                 <tbody>
                     {
                         rows.map(tbody => (
                             <tr>
-                                <td>{tbody.valuyeItemA}</td>
+                                <td>{tbody.valuysdfeItemA}</td>
                                 <td>{tbody.valueItemB}</td>
                                 <td>{tbody.valueItemC}</td>
-                                <td>{tbody.valueItemD}</td>
+                                <td>{tbody.valsueItemD}</td>
                                 <td>{tbody.valueItemE}</td>
                                 <td><EditIcon /></td>
                                 <td><DeleteIcon /></td>
                             </tr>
                         ))
                     }
-                    {/* {
-                        rows.map(especiales => (
-                            <tr>
-                                <td>{especiales.valuyeItemA}</td>
-                                <td>{especiales.valueItemB}</td>
-                                <td><EditIcon /></td>
-                                <td><DeleteIcon /></td>
-                            </tr>
-                        ))
-                    } */}
                 </tbody>
             </table>
         </div>

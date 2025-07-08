@@ -1,6 +1,7 @@
 import React from 'react';
 import '../../styles/landing.css';
 import NavBarComponent from '../Navbar/Navbar';
+import SchedulerView from '../Dues/SchedulerView';
 
 function LandingComponent() {
     var user = localStorage.getItem('userName');
@@ -14,6 +15,8 @@ function LandingComponent() {
         }}>
             <div className='landingContentDiv'>
                 <h1>Hello {user}</h1>
+                <br />
+                <SchedulerView />
             </div>
         </div>
     );

@@ -120,10 +120,10 @@
 }
 
 table {
-  width: 50%;
+  width: 100%;
   height: 100%;
   padding: 3px;
-  border: solid 1px #1B1F24;
+  /* border: solid 1px #1B1F24; */
 }
 
 table thead {
@@ -144,7 +144,7 @@ table tbody tr:nth-child(even) {
 }
 
 .tableDivContent {
-  height: 40vh;
+  height: 85vh;
   width: 100%;
   overflow: scroll;
 }

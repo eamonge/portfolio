@@ -170,14 +170,14 @@ function NavbarComponent() {
                         aria-label="open drawer"
                         onClick={handleDrawerOpen}
                         edge="start"
-                        sx={{ mr: 2, ...(open && { display: 'none' }) }}                        
+                        sx={{ mr: 2, ...(open && { display: 'none' }) }}
                     >
-                        <MenuIcon className='icon-navbar'/>
+                        <MenuIcon className='icon-navbar' />
                     </IconButton>
                     <Typography variant="h6" noWrap component="div">
                         Restaurante Panel Control
                     </Typography>
-                    <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }} style={{position: 'absolute', right: '1rem'}}>
+                    <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }} style={{ position: 'absolute', right: '1rem' }}>
                         <Avatar className='btnIconNavbar' alt={userNameVal} src="/static/images/avatar/2.jpg" />
                     </IconButton>
                     <Menu
@@ -262,24 +262,28 @@ function NavbarComponent() {
                         </Link>
                     </ListItem>
                     <ListItem disablePadding>
-                        <ListItemButton>
-                            <ListItemIcon>
-                                <PeopleIcon className='icon-navbar' />
-                            </ListItemIcon>
-                            <ListItemText primary={'Clientes'} />
-                        </ListItemButton>
+                        <Link to='/clientes' className='navLink'>
+                            <ListItemButton>
+                                <ListItemIcon>
+                                    <PeopleIcon className='icon-navbar' />
+                                </ListItemIcon>
+                                <ListItemText primary={'Clientes'} />
+                            </ListItemButton>
+                        </Link>
                     </ListItem>
                 </List>
                 <Divider />
                 <List>
-                    <ListItem disablePadding>
-                        <ListItemButton>
-                            <ListItemIcon>
-                                <StyleIcon className='icon-navbar' />
-                            </ListItemIcon>
-                            <ListItemText primary={'Marcas'} />
-                        </ListItemButton>
-                    </ListItem>
+                    {/* <ListItem disablePadding>
+                        <Link to='/marcas' className='navLink'>
+                            <ListItemButton>
+                                <ListItemIcon>
+                                    <StyleIcon className='icon-navbar' />
+                                </ListItemIcon>
+                                <ListItemText primary={'Marcas'} />
+                            </ListItemButton>
+                        </Link>
+                    </ListItem> */}
                     <ListItem disablePadding>
                         <Accordion className='contentproductos-acc'>
                             <AccordionSummary
@@ -291,10 +295,12 @@ function NavbarComponent() {
                             </AccordionSummary>
                             <AccordionDetails>
                                 <ListItemButton>
-                                    <ListItemIcon>
-                                        <FastfoodIcon className='icon-navbar' />
-                                    </ListItemIcon>
-                                    <ListItemText primary={'Comestibles'} />
+                                    <Link to='/comestibles' className='navLink'>
+                                        <ListItemIcon>
+                                            <FastfoodIcon className='icon-navbar' />
+                                        </ListItemIcon>
+                                        <ListItemText primary={'Comestibles'} />
+                                    </Link>
                                 </ListItemButton>
                                 <ListItemButton>
                                     <ListItemIcon>

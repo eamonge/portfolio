@@ -1,0 +1,140 @@
+.login-backdrop {
+    background: #a8ff78;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #78ffd6, #a8ff78);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #78ffd6, #a8ff78);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.login-modalMain {
+    position: relative;
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.49);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.3px);
+    -webkit-backdrop-filter: blur(5.3px);
+    border: 1px solid rgba(255, 255, 255, 0.71);
+    /* height: 50vw; */
+    padding: 0.4em;
+}
+
+.login-modalMain h1 {
+    /* margin-t */
+    text-align: center;
+}
+
+.login-modalMain label {
+    margin-right: 1em;
+    /* float: left;
+    width: 0.4em; */
+}
+
+.login-modalMain input,
+label {
+    position: relative;
+    margin-top: 1em;
+    /* top: 25%;
+    left: 7em; */
+
+}
+
+input {
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 16px;
+    backdrop-filter: blur(5.3px);
+    border: solid 1px white;
+    padding: 0.5em;
+    text-align: center;
+}
+
+input:focus {
+    outline: none;
+}
+
+.login-modalContent {
+    position: relative;
+    /* height: 100%; */
+    text-align: center;
+}
+
+.login-modalContent button {
+    width: 100px;
+    position: relative;
+    /* top: 1em; */
+    /* margin-top: 0.4em; */
+    height: 45px;
+    /* border-radius: 200px; */
+}
+
+.login-modalContent h4 {
+    color: #c31432;
+    display: none;
+}
+
+.display-warning {
+    display: block!important;
+}
+
+.login-btn {
+    border: solid 2px #95e06c;
+    background-color: rgba(0, 0, 0, 0);
+    color: black;
+    /* background-color: #a8ff78; */
+}
+
+.login-btn::after {
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #95e06c;
+    /* border-radius: 200px; */
+    height: 100%;
+    width: 0;
+    z-index: -1;
+    transition: all 300ms;
+}
+
+.login-btn:hover {
+    border: solid 2px white;
+    color: white;
+}
+
+.login-btn:hover:after {
+    left: 0;
+    width: 100%;
+}
+
+.login-register-btn {
+    background-color: rgba(0, 0, 0, 0);
+    border: solid 2px #c31432;
+}
+
+.login-register-btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #c31432;
+    transition: all 300ms;
+    z-index: -1;
+}
+
+.login-register-btn:hover:after {
+    left: 0;
+    width: 100%;
+}
+
+.login-register-btn:hover {
+    border: solid 2px white;
+    color: white;
+}

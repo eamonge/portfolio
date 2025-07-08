@@ -16,8 +16,8 @@ import { useNavigate, Link } from 'react-router-dom';
 
 import '../../styles/navbar.css';
 
-const pages = ['Due dates', 'Charts', 'Settings'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+// const pages = ['Due dates', 'Charts', 'Settings'];
+// const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function NavBarComponent() {
     var user = localStorage.getItem('userName');
@@ -56,24 +56,6 @@ function NavBarComponent() {
                 <Container maxWidth="xl">
                     <Toolbar disableGutters>
                         <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
-                        <Typography
-                            variant="h6"
-                            noWrap
-                            component="a"
-                            href="#app-bar-with-responsive-menu"
-                            sx={{
-                                mr: 2,
-                                display: { xs: 'none', md: 'flex' },
-                                fontFamily: 'monospace',
-                                fontWeight: 700,
-                                letterSpacing: '.3rem',
-                                color: 'inherit',
-                                textDecoration: 'none',
-                            }}
-                        >
-                            d
-                        </Typography>
-
                         <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
                             <IconButton
                                 size="large"
@@ -161,7 +143,7 @@ function NavBarComponent() {
                                 {page}
                             </Button> */}
 
-                            {pages.map((page) => (
+                            {/* {pages.map((page) => (
                                 <Button
                                     key={page}
                                     onClick={handleCloseNavMenu}
@@ -169,7 +151,7 @@ function NavBarComponent() {
                                 >
                                     {page}
                                 </Button>
-                            ))}
+                            ))} */}
                         </Box>
 
                         <Box sx={{ flexGrow: 0 }}>

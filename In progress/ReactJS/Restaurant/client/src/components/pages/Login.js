@@ -9,6 +9,7 @@ import Alert from '@mui/material/Alert';
 function LoginComponent() {
 
     const handleSubmit = (e) => {
+        //Preventing default action to be taken upon submit onClick
         e.preventDefault();
         var usernameInput = document.getElementById('usernameInput').value;
         var passwordInput = document.getElementById('passwordInput').value;

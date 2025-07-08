@@ -6,24 +6,33 @@ import Grid from '@mui/material/Unstable_Grid2';
 import { Route, Routes } from 'react-router-dom';
 
 //Importing navbar links
+
+
+
+
+import EquiposComponent from './Productos/Equipos';
+import TecnologiaComponent from './Productos/Tecnologias';
+import LimpiezaComponent from './Productos/Limpieza';
+import DesechablesComponent from './Productos/Desechables';
+import ComestiblesComponent from './Productos/Comestibles';
+import MarcasComponent from './Marcas/Marcas';
+import ClienteComponent from './Clientes/Clientes';
 import AdministracionComponent from './Administración/Administracion';
 import RestaurantesComponent from './Restaurantes/Restaurantes';
 import LoginComponent from './Login';
 import MainComponent from './Main';
 
-
-const Item = styled(Paper)(({ theme }) => ({
-    backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-    ...theme.typography.body2,
-    padding: theme.spacing(1),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-}));
-
 function LandingViewComponent() {
     return (
         <div className='contentdiv-container'>
             <Routes>
+                <Route path='/equipos' Component={EquiposComponent} />
+                <Route path='/tecnologia' Component={TecnologiaComponent} />
+                <Route path='/limpieza' Component={LimpiezaComponent} />
+                <Route path='/desechables' Component={DesechablesComponent} />
+                <Route path='/comestibles' Component={ComestiblesComponent} />
+                <Route path='/marcas' Component={MarcasComponent} />
+                <Route path='/clientes' Component={ClienteComponent} />
                 <Route path='/administracion' Component={AdministracionComponent} />
                 <Route path='/restaurantes' Component={RestaurantesComponent} />
                 <Route path='/home' Component={MainComponent} />
