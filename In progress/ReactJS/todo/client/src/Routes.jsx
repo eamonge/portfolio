@@ -1,19 +1,50 @@
-import React from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router';
 // Importing pages
+import Landing from './components/pages/Landing';
 import Login from './components/pages/Login';
 import NotFound from './components/pages/NotFound';
+import Register from './components/pages/Register';
+import AuthContext from './components/context/AuthContextProvider';
 
 const AppRoutes = () => {
+  const { loggedIn, loading } = useContext(AuthContext);
+  const [localLoading, setLocalLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLocalLoading(false);
+    }, 2000); // 2-second delay
+
+    return () => clearTimeout(timer); // Clean up timeout on unmount
+  }, []);
+
+  if (loading || localLoading) return <div>Loading...</div>
+
   return (
     <>
-        <BrowserRouter>
-            {/* Public routes */}
-            <Routes>
-                <Route path='/' element={<Login/>}/>
-                <Route path='*' element={<NotFound/>}/>
-            </Routes>
-        </BrowserRouter>
+      <BrowserRouter>
+        <Routes>
+          {/* Public routes */}
+          {
+            !loggedIn && (
+              <>
+                <Route path='/register' element={<Register />} />
+                <Route path='/' element={<Login />} />
+                <Route path='*' element={<NotFound />} />
+              </>
+            )
+          }
+          {/* Authenticated users */}
+          {loggedIn && (
+            <>
+              <Route path='/home' element={<Landing />} />
+            </>
+          )}
+          <Route path='/' element={<Login />} />
+          <Route path='/*' element={<NotFound />} />
+        </Routes>
+      </BrowserRouter >
     </>
   )
 }

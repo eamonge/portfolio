@@ -1,0 +1,54 @@
+.landingContent {
+    position: relative;
+    background-color: whitesmoke;
+    width: 90%;
+    height: 50%;
+    left: 5%;
+    top: 20%;
+    text-align: center;
+    padding: 0.05em;
+    border-radius: 20px;
+
+    box-shadow: 1px 1px 13px 5px rgba(0, 0, 0, 0.53);
+    -webkit-box-shadow: 1px 1px 13px 5px rgba(0, 0, 0, 0.53);
+    -moz-box-shadow: 1px 1px 13px 5px rgba(0, 0, 0, 0.53);
+    overflow: scroll;
+}
+
+.landingContent ul {
+    /* padding: 1em; */
+    text-align: left;
+    padding: 0;
+}
+
+.landingContent li {
+    position: relative;
+    left: 0;
+    list-style: none;
+    border: solid 2px #bebfc0;
+    margin: 0.4em;
+    padding-left: 1em;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 20px;
+}
+
+.contentInput {
+    background-color: #b3b4b4;
+    border: solid 2px #b3b4b4;
+    width: 90%;
+}
+
+.contentInput::placeholder {
+    color: white;
+}
+
+
+
+.landingContent li button {
+    position: absolute;
+    right: 1em;
+    top: 25%;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+}

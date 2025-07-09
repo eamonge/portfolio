@@ -31,15 +31,21 @@
 }
 
 .login-modalMain label {
-    margin-right: 1em;
+    float: left;
+    width: 100px;
+    /* margin-right: 1em; */
+    /* margin-right: 2em;
+    background-color: #78ffd6;
+    width: 100px; */
     /* float: left;
-    width: 0.4em; */
+    width: 1em; */
 }
 
 .login-modalMain input,
 label {
     position: relative;
     margin-top: 1em;
+    /* right: 1em; */
     /* top: 25%;
     left: 7em; */
 
@@ -73,7 +79,7 @@ input:focus {
     /* border-radius: 200px; */
 }
 
-.login-modalContent h4 {
+#alertMessage-login {
     color: #c31432;
     display: none;
 }

@@ -21,7 +21,7 @@
   }
 
   .login-modalContent label {
-    font-size: 1em;
+    /* font-size: 0.7em; */
   }
   
   .login-modalContent input {
@@ -33,6 +33,9 @@
   .login-modalContent button {
     top: 2em;
     margin-top: 2.5em;
+  }
+  .secondLN-label {
+    /* font-size: 0.8em!important; */
   }
 }
 

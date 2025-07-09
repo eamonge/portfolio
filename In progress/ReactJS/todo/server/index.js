@@ -5,6 +5,8 @@ const bodyParser = require('body-parser');
 
 // Calling backEnd routes
 var testRoute = require('./routes/testRoutes');
+var userRoute = require('./routes/userRoutes');
+const cookieParser = require('cookie-parser');
 
 var app = express();
 app.use(bodyParser.json());
@@ -12,7 +14,15 @@ app.use(bodyParser.json());
 var PORT = process.env.PORT;
 var origin = process.env.REQUEST_ORIGIN;
 
+app.use(cors({
+    origin: [`${origin}`],
+    credentials: true
+}));
+
+app.use(cookieParser());
+
 app.use('/test', testRoute);
+app.use('/auth', userRoute);
 
 app.listen(PORT, () => {
     console.log(`backEnd server running on port ${PORT}`)
