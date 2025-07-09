@@ -38,6 +38,7 @@ DB_SERVER = localhost
 DB_PORT = 1433
 DB_PWD = (Faj9WGBwpl9?s^1;dPv+0
 JWT_SECRET = iOO£qHt7k6)R0)@aQ{0e+r
+VITE_APP_BASE_URL = http://localhost:5000
 
 
 
