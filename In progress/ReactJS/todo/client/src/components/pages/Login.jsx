@@ -3,10 +3,12 @@ import '../styles/Login.css';
 import { Navigate, useNavigate } from 'react-router';
 import { logInUser } from '../api/usersAPI';
 import AuthContext from '../context/AuthContextProvider';
+import axios from 'axios';
 
 const Login = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    const [alertMessage, setAlertMessage] = useState("");
     const navigate = useNavigate();
     const [loading, setLoading] = useState(false);
     const {getLoggedIn} = useContext(AuthContext);
@@ -23,18 +25,29 @@ const Login = () => {
         };
 
         if (email === "" || password === "") {
-            window.alert('Please add all necessary values');
+            // window.alert('');
+            setAlertMessage('Please add all necessary values');
         } else {
             try {
                 // console.log(loginData);
-                await logInUser(loginData);
-                // navigate('/home');
-                window.location.href = '/home';
+                // await logInUser(loginData);
+                // // navigate('/home');
+                // window.location.href = '/home';}
+
+                await axios.post(`${import.meta.env.VITE_APP_BASE_URL}/auth/login`, loginData, {
+                    withCredentials: true
+                });
+
+                var millisecondsToWait = 3000;
+                localStorage.setItem("userEmail", email);
+                setTimeout(function () {
+                    // navigate('/home');
+                    window.location.href = '/home';
+                }, millisecondsToWait);
+
             } catch (err) {
-                alertMessage.classList.add("display-warning");
+                setAlertMessage('Username or password is incorrect!');
                 console.log(err);
-            } finally {
-                setLoading(false);
             }
         }
     };
@@ -63,7 +76,7 @@ const Login = () => {
                         <button type='button' className='login-register-btn' onClick={() => navigate('/register')}>Register</button>
                     </form>
                     <br />
-                    <h4 id='alertMessage-login'>Username or password is incorrect!</h4>
+                    <h4>{alertMessage}</h4>
                 </div>
             </div>
         </div>

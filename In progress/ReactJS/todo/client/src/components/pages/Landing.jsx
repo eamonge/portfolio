@@ -1,75 +1,81 @@
 import React, { useEffect, useState } from 'react'
 import '../styles/landing.css';
+import { useContext } from 'react';
+import DataContext from '../context/DataContextProvider';
+import { addTask, deleteTask, getTaskData, updateTaskStatus } from '../api/tasksAPI';
+import axios from 'axios';
+import PropTypes from 'prop-types';
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+import Box from '@mui/material/Box';
+import AllTasks from './AllTasks';
+import PendingTasks from './PendingTasks';
+import CompletedTasks from './CompletedTasks';
 
-const initialList = [
-  {
-    "itemID": 1,
-    "itemName": "A",
-    "isComplete": false
-  },
-  {
-    "itemID": 2,
-    "itemName": "B",
-    "isComplete": false
-  },
-  {
-    "itemID": 3,
-    "itemName": "C",
-    "isComplete": false
-  },
-  {
-    "itemID": 4,
-    "itemName": "D",
-    "isComplete": false
-  },
-  {
-    "itemID": 5,
-    "itemName": "E",
-    "isComplete": false
-  },
-]
+
+function CustomTabPanel(props) {
+  const { children, value, index, ...other } = props;
+
+  return (
+    <div
+      role="tabpanel"
+      hidden={value !== index}
+      id={`simple-tabpanel-${index}`}
+      aria-labelledby={`simple-tab-${index}`}
+      {...other}
+    >
+      {value === index && <Box sx={{ p: 3 }}>{children}</Box>}
+    </div>
+  );
+}
+
+CustomTabPanel.propTypes = {
+  children: PropTypes.node,
+  index: PropTypes.number.isRequired,
+  value: PropTypes.number.isRequired,
+};
+
+function a11yProps(index) {
+  return {
+    id: `simple-tab-${index}`,
+    'aria-controls': `simple-tabpanel-${index}`,
+  };
+}
 
 const Landing = () => {
-  const [data, setData] = useState([]);
+  const { userData } = useContext(DataContext)
+  const [taskData, setTaskData] = useState([]);
+  const [alertMessage, setAlertMessage] = useState("");
+  const [isChecked, setIsChecked] = useState(false);
+  const [value, setValue] = React.useState(0);
 
-  const setListData = async () => {
-    setData(initialList);
+  const handleChangeTab = (event, newValue) => {
+    setValue(newValue);
   };
-
-  const handleDelete = async val => {
-    let itemIdToRemove = val;
-    // let indexToRemove = list.findIndex(item => item.itemID === itemIdToRemove);
-
-    // if (indexToRemove !== -1) {
-    //   list.splice(indexToRemove, 1);
-    // }
-    // setListData();
-
-    const updatedList = data.filter(item => item.itemID !== itemIdToRemove);
-    setData(updatedList);
-    console.log(updatedList);
-  }
-
-  useEffect(() => {
-      setListData();
-  }, []);
 
   return (
     <div className="main-backDrop">
       <div className="landingContent">
         <h1>ToDo List</h1>
-        <input placeholder='Add to do' className='contentInput' />
-        <ul>
-          {data.length > 0 ? (
-            data.map((items) =>
-              <li>
-                <input type='checkbox' style={{ marginRight: '1em' }} />
-                {items.itemName}
-                <button onClick={() => handleDelete(items.itemID)}>X</button>
-              </li>
-            )
-          ) : "No items"}
-        </ul>
+        <Box sx={{ width: '100%' }}>
+          <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+            <Tabs value={value} onChange={handleChangeTab} aria-label="basic tabs example">
+              <Tab label="All" {...a11yProps(0)} />
+              <Tab label="Pending" {...a11yProps(1)} />
+              <Tab label="Completed" {...a11yProps(2)} />
+            </Tabs>
+          </Box>
+          <CustomTabPanel value={value} index={0}>
+            <AllTasks />
+          </CustomTabPanel>
+          <CustomTabPanel value={value} index={1}>
+            <PendingTasks />
+          </CustomTabPanel>
+          <CustomTabPanel value={value} index={2}>
+            <CompletedTasks />
+          </CustomTabPanel>
+        </Box>
+        <h5>{alertMessage}</h5>
       </div>
     </div>
   )

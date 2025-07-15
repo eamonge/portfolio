@@ -2,11 +2,12 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
 
 // Calling backEnd routes
 var testRoute = require('./routes/testRoutes');
 var userRoute = require('./routes/userRoutes');
-const cookieParser = require('cookie-parser');
+var tasksRoute = require('./routes/tasksRoute');
 
 var app = express();
 app.use(bodyParser.json());
@@ -23,6 +24,7 @@ app.use(cookieParser());
 
 app.use('/test', testRoute);
 app.use('/auth', userRoute);
+app.use('/tasks', tasksRoute);
 
 app.listen(PORT, () => {
     console.log(`backEnd server running on port ${PORT}`)

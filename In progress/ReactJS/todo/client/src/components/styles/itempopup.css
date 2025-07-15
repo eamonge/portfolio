@@ -1,0 +1,29 @@
+.itemPopup-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    background-color: rgba(0, 0, 0, .4);
+    width: 100vw;
+    height: 100vh;
+}
+
+.itemPopup-content {
+    background-color: whitesmoke;
+    position: relative;
+    top: 25%;
+    width: 85%;
+    left: 5%;
+    height: 50%;
+    border-radius: 20px;
+    padding: 1em;
+}
+
+.borderlessBtn {
+    position: absolute;
+    /* top: 15px; */
+    top: 1em;
+    right: 1em;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+}

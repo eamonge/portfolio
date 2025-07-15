@@ -11,3 +11,7 @@
     width: 100vw;
     height: 100vh;
 }
+
+.pendingTaskContent li {
+    background-color: teal!important;
+}

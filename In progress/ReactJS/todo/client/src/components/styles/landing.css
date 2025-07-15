@@ -1,10 +1,11 @@
 .landingContent {
-    position: relative;
+    /* position: relative;
+    position: absolute; */
     background-color: whitesmoke;
     width: 90%;
     height: 50%;
-    left: 5%;
-    top: 20%;
+    margin-top: 50%;
+    margin-left: 5%;
     text-align: center;
     padding: 0.05em;
     border-radius: 20px;
@@ -13,24 +14,6 @@
     -webkit-box-shadow: 1px 1px 13px 5px rgba(0, 0, 0, 0.53);
     -moz-box-shadow: 1px 1px 13px 5px rgba(0, 0, 0, 0.53);
     overflow: scroll;
-}
-
-.landingContent ul {
-    /* padding: 1em; */
-    text-align: left;
-    padding: 0;
-}
-
-.landingContent li {
-    position: relative;
-    left: 0;
-    list-style: none;
-    border: solid 2px #bebfc0;
-    margin: 0.4em;
-    padding-left: 1em;
-    height: 30px;
-    line-height: 30px;
-    border-radius: 20px;
 }
 
 .contentInput {
@@ -51,4 +34,8 @@
     top: 25%;
     border: none;
     background-color: rgba(0, 0, 0, 0);
+}
+
+.vanish-item {
+    display: none!important;
 }

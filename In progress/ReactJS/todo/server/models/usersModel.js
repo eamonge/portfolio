@@ -37,7 +37,26 @@ async function logInUser(userEmail) {
     }
 }
 
+//Gets user data
+async function getUserData(email) {
+    try {
+        var sqlQuery = `SELECT personID, firstName, LastName, email
+                        FROM Users
+                        WHERE email = @UserEmail;`
+        const pool = await poolPromise;
+        const result = await pool
+            .request()
+            .input("UserEmail", sql.VarChar, email)
+            .query(sqlQuery);
+        
+        return result.recordset;
+    } catch (err) {
+        console.error(`Failed querying user data: ${err}`);
+    }
+} 
+
 module.exports = {
     createUser,
     logInUser,
+    getUserData,
 }

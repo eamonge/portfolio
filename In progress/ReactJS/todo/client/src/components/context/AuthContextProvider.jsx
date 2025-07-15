@@ -9,10 +9,8 @@ function AuthContextProvider(props) {
   const [loggedIn, setLoggedIn] = useState(false);
   const [loading, setLoading] = useState(true);
 
-  console.log('Base url: ', BASE_URL);
-
   const getLoggedIn = async () => {
-    setLoading(true); // start loading whenever called
+    console.log('Log in auth!');
     try {
       if (!loggedIn) {
         const loggedInRes = await axios.get(`${BASE_URL}/auth/loggedIn`, {
@@ -22,12 +20,9 @@ function AuthContextProvider(props) {
       } else {
         console.log('ee');
       }
-    } catch (err) {
-      console.error('Err: ', err);
-      setLoggedIn(false);
     } finally {
       setLoading(false);
-    }
+    };
   };
 
   useEffect(() => {

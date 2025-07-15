@@ -3,7 +3,7 @@ const { poolPromise, sql } = require('../sql/db');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
-const { createUser, logInUser } = require('../models/usersModel');
+const { createUser, logInUser, getUserData } = require('../models/usersModel');
 
 router.use(cookieParser());
 
@@ -118,6 +118,18 @@ router.get('/loggedIn', async (req, res) => {
     } catch (err) {
         console.log(err);
         return res.json(false);
+    }
+});
+
+//Gets user data
+router.get('/data/:email', async (req, res) => {
+    const mail = req.params.email;
+    try {
+        const userData = await getUserData(mail);
+        res.json(userData);
+    } catch (err) {
+        console.log(err);
+        return res.status(500).send("Fetch user data failed: ", err);
     }
 });
 

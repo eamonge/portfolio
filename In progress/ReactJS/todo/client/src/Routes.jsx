@@ -6,6 +6,7 @@ import Login from './components/pages/Login';
 import NotFound from './components/pages/NotFound';
 import Register from './components/pages/Register';
 import AuthContext from './components/context/AuthContextProvider';
+import LoadingComponent from './components/pages/Loading';
 
 const AppRoutes = () => {
   const { loggedIn, loading } = useContext(AuthContext);
@@ -14,12 +15,12 @@ const AppRoutes = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLocalLoading(false);
-    }, 2000); // 2-second delay
+    }, 3000); // 2-second delay
 
     return () => clearTimeout(timer); // Clean up timeout on unmount
   }, []);
 
-  if (loading || localLoading) return <div>Loading...</div>
+  if (loading || localLoading) return <LoadingComponent />
 
   return (
     <>
@@ -29,6 +30,7 @@ const AppRoutes = () => {
           {
             !loggedIn && (
               <>
+                <Route path='/loding' element={<LoadingComponent />} />
                 <Route path='/register' element={<Register />} />
                 <Route path='/' element={<Login />} />
                 <Route path='*' element={<NotFound />} />
@@ -41,8 +43,6 @@ const AppRoutes = () => {
               <Route path='/home' element={<Landing />} />
             </>
           )}
-          <Route path='/' element={<Login />} />
-          <Route path='/*' element={<NotFound />} />
         </Routes>
       </BrowserRouter >
     </>
