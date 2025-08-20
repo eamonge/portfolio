@@ -1,0 +1,87 @@
+/* Small phones */
+@media only screen and (min-width: 360px) {
+    .contentBody img {
+        width: 4.2em;
+        height: 4.2em;
+    }
+
+    .bottomH6 {
+        position: relative;
+        top: 6em;
+    }
+
+    .material-icons {
+    }
+}
+
+/* Small devices and most phones */
+@media only screen and (min-width: 480px) {}
+
+/* Tablets */
+@media only screen and (min-width: 768px) {}
+
+/* Smaller desktop viewpoints */
+@media only screen and (min-width: 992px) {}
+
+/* Large devcices and wide screens */
+@media only screen and (min-width: 1200px) {}
+
+.backdropModal {
+    position: absolute;
+    width: 100dvw;
+    height: 100dvh;
+    top: 0;
+    left: 0;
+    background: #2980B9;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #FFFFFF, #6DD5FA, #2980B9);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #FFFFFF, #6DD5FA, #2980B9);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.contentBody {
+    position: relative;
+    padding: 1em;
+    height: 90%;
+    border-radius: 16px;
+    text-align: center;
+    overflow: scroll;
+}
+
+.contentBody img {
+    position: absolute;
+    left: 1em;
+    margin: 0;
+}
+
+.contentBody h6 {
+    margin-top: 0;
+}
+
+/* .textContainer {
+    background-color: teal;
+    display: flex;
+    align-items: center;
+} */
+
+.material-icons {
+    font-size: 1em!important;
+}
+
+.material-icons,
+.textContainer, span{
+    width: auto;
+    margin: 0;
+    display: inline-block;
+    vertical-align: center;
+}
+
+* {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}

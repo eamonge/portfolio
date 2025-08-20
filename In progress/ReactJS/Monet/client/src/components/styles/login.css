@@ -1,0 +1,89 @@
+.backdropModal {
+    background: #373B44;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #4286f4, #373B44);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #4286f4, #373B44);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.foredropModal {
+    position: relative;
+    left: 25%;
+    top: 25%;
+    width: 50%;
+    height: 50%;
+    padding: 0.6em;
+
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+input {
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    height: 35px;
+    background-color: rgba(0, 0, 0, 0);
+    /* border: none;
+    border-bottom: solid 1px black; */
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.274);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: black;
+}
+
+input:focus {
+    outline: none;
+}
+
+.login-Btn {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0);
+    border: solid 1px #4286f4;
+    padding: 1em;
+    margin-top: 2em;
+    transition: all 300ms;
+    color: white;
+}
+
+.login-Btn::before {
+    position: absolute;
+    content: " ";
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: #4286f4;
+    z-index: -1;
+}
+
+.login-Btn::after {
+    content: " ";
+    background-color: whitesmoke;
+    width: 100%;
+    height: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    transition: all 300ms;
+}
+
+.login-Btn:hover {
+    border: solid 1px #4286f4;
+    color: #4286f4;
+}
+
+.login-Btn:hover::after {
+    height: 100%;
+}

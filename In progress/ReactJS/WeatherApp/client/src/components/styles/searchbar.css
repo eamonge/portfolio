@@ -1,0 +1,12 @@
+.inputSearch {
+    border: solid 1px whitesmoke;
+    border-radius: 16px;
+    width: 100%;
+    background-color: rgba(245, 245, 245, .4);
+    text-align: center;
+}
+
+.inputSearch:focus {
+    outline: none;
+    
+}

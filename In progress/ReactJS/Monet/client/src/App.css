@@ -1,0 +1,127 @@
+/* Small phones */
+@media only screen and (min-width: 0px) {
+    .login-Btn {
+        width: 100%;
+    }
+
+    /* Navbar */
+    .navBarLinks {
+        color: black;
+    }
+
+    /* Home */
+    .homeBodyDiv h6 {
+        font-size: 9pt;
+    }
+
+    .homeBodyDiv p {
+        font-size: 1em;
+        background-color: aqua;
+    }
+    .fc-toolbar-title {
+        font-size: 1.3em !important;
+    }
+}
+
+/* Small devices and most phones */
+@media only screen and (min-width: 600px) {
+    .fc-toolbar-title {
+        font-size: 2em !important;
+    }
+}
+
+/* Tablets */
+@media only screen and (min-width: 900px) {
+    .fc-toolbar-title {
+        font-size: 1em !important;
+    }
+    .fc-toolbar-chunk {
+        display: inline-block!important;
+        /* width: 10px;
+        height: 10px; */
+    }
+
+    .fc-toolbar.fc-header-toolbar {
+        font-size: 0.6em;
+    }
+}
+
+/* Smaller desktop viewpoints */
+@media only screen and (min-width: 1200px) {
+
+    /* Navbar */
+    .navBarLinks {
+        color: white;
+    }
+
+    .fc-toolbar.fc-header-toolbar {
+        font-size: 85%;
+    }
+}
+
+/* Large devcices and wide screens */
+@media only screen and (min-width: 1536px) {
+    .login-Btn {
+        width: 50%;
+    }
+
+    .fc-toolbar.fc-header-toolbar {
+        font-size: 1.2em;
+    }
+}
+
+.App {
+    text-align: center;
+}
+
+.backdropModal {
+    position: absolute;
+    width: 100dvw;
+    height: 100dvh;
+    top: 0;
+    left: 0;
+}
+
+/* Navbar */
+
+.navbarMainDiv {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+}
+
+.navBarLinks {
+    text-decoration: none;
+}
+
+/* Main */
+.contentDivBody {
+    margin-top: 4em;
+}
+
+.contentPanel {
+    border: solid 2px lightblue;
+    padding: 1em;
+    border-radius: 8px;
+    height: 600px;
+}
+
+.fc-direction-ltr {
+    height: 100%;
+}
+
+.css-ls1epl-MuiPaper-root-MuiAccordion-root {
+    box-shadow: none !important;
+}
+
+*::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome, Safari and Opera */
+}
+
+* {
+    --webkit-scrollbar: none;
+}
+
+.adheranceGood {
+    background-color: #8ef0b7ff;
+}
