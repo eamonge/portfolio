@@ -10,13 +10,13 @@ router.use(cookieParser());
 //Create user
 router.post('/', async (req, res) => {
     try {
-        const {firstName, lastName, secondLastName, email, pwd} = req.body;
+        const {firstName, lastName, secondLastName, email, username, pwd} = req.body;
 
         const salt = bcrypt.genSaltSync();
         const hashedPassword = await bcrypt.hash(pwd, salt);
 
         try {
-            const addUser = createUser(firstName, lastName, secondLastName, email, hashedPassword);
+            const addUser = createUser(firstName, lastName, secondLastName, email, username, hashedPassword);
             const user = addUser[0];
 
             //Signing JWT web token for user login
@@ -43,14 +43,14 @@ router.post('/', async (req, res) => {
 
 //User log in
 router.post('/login', async (req, res) => {
-    const {email, password} = req.body;
+    const {identifier, password} = req.body;
     
     try {
-        const userResults = await logInUser(email);
+        const userResults = await logInUser(identifier);
 
         //If no email or user is found
         if (userResults.length === 0) {
-            return res.status(401).json({ message: "Invalid email or password"});
+            return res.status(401).json({ message: "Invalid credentials"});
         }
 
         //Returns matching user
@@ -122,10 +122,10 @@ router.get('/loggedIn', async (req, res) => {
 });
 
 //Gets user data
-router.get('/data/:email', async (req, res) => {
-    const mail = req.params.email;
+router.get('/data/:identifier', async (req, res) => {
+    const userIdentifier = req.params.identifier;
     try {
-        const userData = await getUserData(mail);
+        const userData = await getUserData(userIdentifier);
         res.json(userData);
     } catch (err) {
         console.log(err);

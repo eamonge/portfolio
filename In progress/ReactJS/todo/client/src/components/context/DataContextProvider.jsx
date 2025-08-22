@@ -11,9 +11,9 @@ const BASE_URL = import.meta.env.VITE_APP_BASE_URL;
 
 const DataContextProvider = (props) => {
     const [userData, setUserData] = useState([]);
-    var emailUser = localStorage.getItem("userEmail");
+    var userIdentifier = localStorage.getItem("userIdentifier");
 
-    const handleDataFetch = async (email) => {
+    const handleDataFetch = async (userIdentifier) => {
         // if (emailUser) {
         //     console.log('email fetched!')
         //     const data = await axios.get(`${BASE_URL}/auth/data/${email}`, {
@@ -21,10 +21,9 @@ const DataContextProvider = (props) => {
         //     });
         //     setUserData(data.data[0]);
         // }
-        console.log('In function, email is: ', email);
         try {
-            if (emailUser) {
-                const userData = await axios.get(`${BASE_URL}/auth/data/${email}`, {
+            if (userIdentifier) {
+                const userData = await axios.get(`${BASE_URL}/auth/data/${userIdentifier}`, {
                     withCredentials: true
                 });
                 setUserData(userData.data[0]);
@@ -35,7 +34,7 @@ const DataContextProvider = (props) => {
     }
 
     useEffect(() => {
-        handleDataFetch(emailUser);
+        handleDataFetch(userIdentifier);
         console.log(userData[0]);
     }, []);
 

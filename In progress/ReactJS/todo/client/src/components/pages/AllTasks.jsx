@@ -85,6 +85,7 @@ const AllTasks = () => {
 
     useEffect(() => {
         handleFetchTasks();
+        console.log('Person id: ', userData.personID)
     }, []);
     return (
         <div>

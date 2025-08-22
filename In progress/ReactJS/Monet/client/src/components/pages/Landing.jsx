@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
@@ -14,6 +14,8 @@ import timeGridPlugin from '@fullcalendar/timegrid'
 import dayGridPlugin from "@fullcalendar/daygrid";
 import Adherance from './Adherance';
 import StatusChange from './StatusChange';
+
+import AbiTest from './abiTest';
 
 const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: 'rgba(0,0,0,0)',
@@ -43,7 +45,7 @@ const Item = styled(Paper)(({ theme }) => ({
     },
     // 1200px
     [theme.breakpoints.only('lg')]: {
-        border: 'solid 2px #F1F1F1'
+        borderRight: 'solid 2px #F1F1F1'
     },
     // 1536px
     [theme.breakpoints.only('xl')]: {
@@ -52,6 +54,7 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 const Landing = () => {
+    const [abiMessage, setAbiMessage] = useState("Hola k pex");
     const today = new Date();
 
     let dd = today.getDate();
@@ -94,6 +97,7 @@ const Landing = () => {
                 <Grid container spacing={2}>
                     <Grid size={{ xs: 12, sm: 12, md: 3, lg: 3, xl: 3 }}>
                         <Item>
+                            {/* <AbiTest message={abiMessage}/> */}
                             <Accordion defaultExpanded sx={{ width: "100%" }}>
                                 <AccordionSummary
                                     expandIcon={<ExpandMoreIcon />}

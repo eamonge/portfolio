@@ -41,6 +41,8 @@ const AppRoutes = () => {
           {loggedIn && (
             <>
               <Route path='/home' element={<Landing />} />
+              <Route path='/register' element={<Register />} />
+              <Route path='/' element={<Login />} />
             </>
           )}
         </Routes>

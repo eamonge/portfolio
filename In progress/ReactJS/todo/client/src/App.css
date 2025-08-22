@@ -22,7 +22,7 @@
     width: 100px;
   }
 
-  .login-modalContent button {
+  .login-btn, .login-register-btn {
     top: 2em;
     margin-top: 2.5em;
   }
@@ -91,6 +91,4 @@ label {
   display: inline-block;
   width: 100%;
   top: -1em;
-  /* position: absolute;
-    width: 80%; */
 }

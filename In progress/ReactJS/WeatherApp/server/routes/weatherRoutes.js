@@ -28,6 +28,8 @@ router.get('/', async (req, res) => {
             const geoRes = await axios.get(`http://ip-api.com/json/${clientIP}`);
             const geoData = geoRes.data;
 
+            console.log('IP; ', clientIP)
+
             if (geoData.status !== 'success') {
                 return res.status(400).json({ error: 'Unable to determine location' });
             }

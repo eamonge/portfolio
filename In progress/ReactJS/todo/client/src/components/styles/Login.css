@@ -23,6 +23,7 @@
     border: 1px solid rgba(255, 255, 255, 0.71);
     /* height: 50vw; */
     padding: 0.4em;
+    height: auto;
 }
 
 .login-modalMain h1 {
@@ -92,7 +93,6 @@ input:focus {
     border: solid 2px #95e06c;
     background-color: rgba(0, 0, 0, 0);
     color: black;
-    /* background-color: #a8ff78; */
 }
 
 .login-btn::after {

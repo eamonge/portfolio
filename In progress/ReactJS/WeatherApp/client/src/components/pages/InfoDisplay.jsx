@@ -52,6 +52,7 @@ const InfoDisplay = () => {
     return (
         <div className='contentBody'>
             <h4>Current Weather</h4>
+            <h4>Weather of {query}</h4>
             <Box sx={{ flexGrow: 1 }}>
                 <Grid container spacing={2}>
                     <Grid size={3}>

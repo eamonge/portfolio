@@ -1,4 +1,4 @@
-const {sql, poolPromise} = require('../sql/db');
+const {sql, getConnectionPool } = require('../sql/db');
 
 //Gets user tasks per user ID
 async function getTasks(userID) {
@@ -6,7 +6,7 @@ async function getTasks(userID) {
         var sqlQuery = `SELECT *
                     FROM TaskData
                     WHERE UserID = @IdUser;`
-        const pool = await poolPromise;
+        const pool = await getConnectionPool();
         const result = await pool
             .request()
             .input("IdUser", sql.Int, userID)
@@ -23,7 +23,7 @@ async function addTask(userID, taskTitle) {
     try {
         var sqlQuery = `INSERT INTO TaskData(TaskTitle, isComplete, UserID)
                         VALUES (@taskTitle, 0, @IdUser);`
-        const pool = await poolPromise;
+        const pool = await getConnectionPool();
         const result = await pool
             .request()
             .input("IdUser", sql.Int, userID)
@@ -41,7 +41,7 @@ async function deleteTask(taskID, userID) {
         var sqlQuery = `DELETE
                         FROM TaskData
                         WHERE taskID = @TaskId AND UserID = @UserId;`
-        const pool = await poolPromise;
+        const pool = await getConnectionPool();
         const result = await pool
             .request()
             .input("UserId", sql.Int, userID)
@@ -77,7 +77,7 @@ async function updateTaskState(taskId, userId, completeValue) {
         //                 FROM TaskData
         //                 WHERE taskID = @taskId AND UserID = @userId AND isComplete = @updatedComplete;
         //                 COMMIT;`;
-        const pool = await poolPromise;
+        const pool = await getConnectionPool();
         const result = await pool
             .request()
             .input("userId", sql.Int, userId)
@@ -96,7 +96,7 @@ async function getPendingTasks(userID) {
         var sqlQuery = `SELECT *
                         FROM TaskData
                         WHERE isComplete = 0 AND UserID = @IdUser;`
-        const pool = await poolPromise;
+        const pool = await getConnectionPool();
         const result = await pool
             .request()
             .input("IdUser", sql.Int, userID)
@@ -114,7 +114,7 @@ async function getCompletedTasks(userID) {
         var sqlQuery = `SELECT *
                         FROM TaskData
                         WHERE isComplete = 1 AND UserID = @IdUser;`
-        const pool = await poolPromise;
+        const pool = await getConnectionPool();
         const result = await pool
             .request()
             .input("IdUser", sql.Int, userID)

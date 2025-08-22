@@ -18,6 +18,7 @@
         font-size: 1em;
         background-color: aqua;
     }
+
     .fc-toolbar-title {
         font-size: 1.3em !important;
     }
@@ -35,8 +36,9 @@
     .fc-toolbar-title {
         font-size: 1em !important;
     }
+
     .fc-toolbar-chunk {
-        display: inline-block!important;
+        display: inline-block !important;
         /* width: 10px;
         height: 10px; */
     }
@@ -115,7 +117,8 @@
 }
 
 *::-webkit-scrollbar {
-    display: none; /* Hide scrollbar for Chrome, Safari and Opera */
+    display: none;
+    /* Hide scrollbar for Chrome, Safari and Opera */
 }
 
 * {
@@ -125,3 +128,33 @@
 .adheranceGood {
     background-color: #8ef0b7ff;
 }
+
+.statusValDiv::before {
+    position: absolute;
+    top: 40%;
+    left: 25%;
+    content: "";
+    background-color: var(--statusColor);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+/* .status-available::before {
+    background-color: #8ef0b7ff;
+}
+
+.status-break::before {
+    background-color: orange;
+}
+
+.status-lunch::before {
+    background-color: yellow;
+}
+
+.status-meeting::before {
+    background-color: lightblue;
+}
+
+.status-system-issues-tek::after { background-color: red; }
+.status-system-issues-ms::after { background-color: purple; } */

@@ -32,3 +32,28 @@ export const getUserData = async (email) => {
         console.log('Error fetching data: ', err)
     }
 }
+
+export const addUser = async (fName, lName, email, userName, pwd) => {
+    const userData = {
+        fName,
+        lName,
+        email,
+        userName,
+        pwd
+    };
+
+    try {
+        // console.log('FirstName is: ', fName)
+        await instance.post(`${BASE_URL}/auth`, {
+            "firstName": fName,
+            "lastName": lName,
+            "email": email,
+            "username": userName,
+            "pwd": pwd
+        }, {
+            withCredentials: true
+        });
+    } catch (error) {
+        console.log('Error adding user: ', error)
+    }
+}
