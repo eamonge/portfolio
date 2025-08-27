@@ -72,8 +72,7 @@ const StatusChange = () => {
                 <MenuItem value={'Training - Tek'}>7. Training - Tek</MenuItem>
                 <MenuItem value={'Training - MS'}>8. Training - MS</MenuItem>
                 <MenuItem value={'Other Tek Activities'}>9. Other Tek Activities</MenuItem>
-                <MenuItem value={'End of shift'}>10. End of shift</MenuItem>
-                <MenuItem value={'Logged out'}>11. Logged out</MenuItem>
+                <MenuItem value={'Logged out'}>10. Logged out</MenuItem>
               </Select>
             </FormControl>
           </Box>

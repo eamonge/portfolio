@@ -26,32 +26,57 @@ export const timeRemaining = (status, elapsed) => {
   return Math.max(max - elapsed);
 }
 
-export const calculateAdherence = (history, shiftLengthSecs, allowances) => {
-  // allowances is like: { Break: 1800, Lunch: 3600, Meeting: 7200 }
+export const calculateAdherence = (history, shiftStartSec, shiftEndSec, allowances) => {
+  if (!Array.isArray(history)) history = [];
 
-  // Sum up actual time spent
+  const totalShiftSecs = shiftEndSec - shiftStartSec;
+  let totalGoodTime = 0;
+  let totalPenalties = 0;
   const totals = {};
+
   history.forEach(({ status, startTime, endTime }) => {
-    const duration = Math.floor((endTime - startTime) / 1000);
+    const duration = (endTime - startTime) / 1000;
     totals[status] = (totals[status] ?? 0) + duration;
+
+    const startSec = startTime / 1000;
+    const endSec = endTime / 1000;
+    const insideShift = Math.max(0, Math.min(endSec, shiftEndSec) - Math.max(startSec, shiftStartSec));
+    const outsideShift = duration - insideShift;
+
+    if (status === "Available") {
+      // Available is good **only inside shift**
+      totalGoodTime += insideShift;
+      // Logged out outside shift is allowed, so outside shift is penalized if Available is outside
+      if (outsideShift > 0) totalPenalties += outsideShift;
+    } 
+    else if (status === "Break" || status === "Lunch") {
+      const allowed = allowances[status] ?? duration;
+      totalGoodTime += Math.min(duration, allowed); // only count up to allowed
+      if (duration > allowed) totalPenalties += duration - allowed;
+      // Break/Lunch outside shift reduces adherence
+      if (outsideShift > 0) totalPenalties += outsideShift;
+    } 
+    else if (status === "Logged out") {
+      // Good outside shift, bad inside shift
+      if (insideShift > 0) totalPenalties += insideShift;
+      else totalGoodTime += outsideShift; // good outside shift
+    } 
+    else {
+      // Any other unexpected status, fully penalized
+      totalPenalties += duration;
+    }
   });
 
-  // Check adherence
-  let over = [];
-  for (const [status, allowed] of Object.entries(allowances)) {
-    if ((totals[status] ?? 0) > allowed) {
-      over.push({ status, allowed, actual: totals[status] });
-    }
-  }
+  // Also automatically count **Available as residual for shift gaps**
+  // e.g., any part of shift not covered by Break, Lunch, or Logged out
+  const coveredTime = Object.entries(totals).reduce((sum, [status, t]) => sum + t, 0);
+  const residualAvailable = Math.max(0, totalShiftSecs - coveredTime);
+  totalGoodTime += residualAvailable;
 
-  // Calculate adherence %
-  const workedTime = shiftLengthSecs; // total shift length
-  const usedTime = Object.entries(totals).reduce((acc, [status, t]) => {
-    if (allowances[status]) return acc + Math.min(t, allowances[status]);
-    return acc + t;
-  }, 0);
+  // Final adherence %
+  totalPenalties = Math.min(totalPenalties, totalShiftSecs);
+  let adherencePct = ((totalGoodTime - totalPenalties) / totalShiftSecs) * 100;
+  adherencePct = Math.max(0, Math.min(100, adherencePct));
 
-  const adherencePct = Math.min(100, (usedTime / workedTime) * 100);
-
-  return { adherencePct, over, totals };
+  return { adherencePct, totals, totalPenalties, totalGoodTime };
 };
