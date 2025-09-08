@@ -8,7 +8,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { setStatus } from '../../features/statusSlice';
 
 const StatusChange = () => {
-  const { status, startTime } = useSelector((state) => state.status);
+  const { status, startTime, elapsed } = useSelector((state) => state.status);
   const dispatch = useDispatch();
   const [time, setTime] = useState(0);
   const timerRef = useRef(null);
@@ -28,25 +28,26 @@ const StatusChange = () => {
 
   const handleChange = (e) => {
     dispatch(setStatus(e.target.value));
+    console.log('Start time is: ', startTime)
   };
 
-  useEffect(() => {
-    if (!startTime) {
-      setTime(0);
-      return;
-    };
+  // useEffect(() => {
+  //   if (!startTime) {
+  //     setTime(0);
+  //     return;
+  //   };
 
-    if (timerRef.current) clearInterval(timerRef.current);
+  //   if (timerRef.current) clearInterval(timerRef.current);
 
-    const update = () => {
-      const elapsed = Math.floor((Date.now() - startTime) / 1000);
-      setTime(elapsed >=0 ? elapsed: 0);
-    };
-    update(); //Run immediately
-    timerRef.current = setInterval(update, 1000);
+  //   const update = () => {
+  //     const elapsed = Math.floor((Date.now() - startTime) / 1000);
+  //     setTime(elapsed >=0 ? elapsed: 0);
+  //   };
+  //   update(); //Run immediately
+  //   timerRef.current = setInterval(update, 1000);
 
-    return () => clearInterval(timerRef.current)
-  }, [startTime]);
+  //   return () => clearInterval(timerRef.current)
+  // }, [startTime]);
 
   return (
     <div className='contentPanel'>
@@ -80,7 +81,7 @@ const StatusChange = () => {
       </div>
       {
         status !== "" ? (
-          <h1>Time in status <b>{status}</b> : {formatTime(time)}</h1>
+          <h1>Time in status <b>{status}</b> : {formatTime(elapsed)}</h1>
         ) : (
           <h1>No status selected</h1>
         )

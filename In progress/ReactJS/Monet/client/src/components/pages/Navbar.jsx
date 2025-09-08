@@ -88,35 +88,35 @@ const Navbar = () => {
                     </Link>
                   </MenuItem>
                   <MenuItem>
-                    <Link to='/checkout' className='navBarLinks'>
+                    <Link to='/schedule-changes' className='navBarLinks'>
                       <Typography sx={{ textAlign: 'center' }}>
                         My schedule changes
                       </Typography>
                     </Link>
                   </MenuItem>
                   <MenuItem>
-                    <Link to='/checkout' className='navBarLinks'>
+                    <Link to='/adherence' className='navBarLinks'>
                       <Typography sx={{ textAlign: 'center' }}>
                         My adherance
                       </Typography>
                     </Link>
                   </MenuItem>
                   <MenuItem>
-                    <Link to='/checkout' className='navBarLinks'>
+                    <Link to='/schedule-actions' className='navBarLinks'>
                       <Typography sx={{ textAlign: 'center' }}>
                         Schedule action
                       </Typography>
                     </Link>
                   </MenuItem>
                   <MenuItem>
-                    <Link to='/checkout' className='navBarLinks'>
+                    <Link to='/my-alerts' className='navBarLinks'>
                       <Typography sx={{ textAlign: 'center' }}>
                         My alerts
                       </Typography>
                     </Link>
                   </MenuItem>
                   <MenuItem>
-                    <Link to='/checkout' className='navBarLinks'>
+                    <Link to='/preferences' className='navBarLinks'>
                       <Typography sx={{ textAlign: 'center' }}>
                         Preferences
                       </Typography>
@@ -147,7 +147,7 @@ const Navbar = () => {
                   onClick={handleCloseNavMenu}
                   sx={{ my: 2, display: 'block' }}
                 >
-                  <Link to='/history' className='navBarLinks'>
+                  <Link to='/schedule-changes' className='navBarLinks'>
                     My schedule changes
                   </Link>
                 </Button>
@@ -155,7 +155,7 @@ const Navbar = () => {
                   onClick={handleCloseNavMenu}
                   sx={{ my: 2, display: 'block' }}
                 >
-                  <Link to='/history' className='navBarLinks'>
+                  <Link to='/adherence' className='navBarLinks'>
                     My adherence
                   </Link>
                 </Button>
@@ -163,7 +163,7 @@ const Navbar = () => {
                   onClick={handleCloseNavMenu}
                   sx={{ my: 2, display: 'block' }}
                 >
-                  <Link to='/history' className='navBarLinks'>
+                  <Link to='/schedule-actions' className='navBarLinks'>
                     Schedule Action
                   </Link>
                 </Button>
@@ -171,7 +171,7 @@ const Navbar = () => {
                   onClick={handleCloseNavMenu}
                   sx={{ my: 2, display: 'block' }}
                 >
-                  <Link to='/history' className='navBarLinks'>
+                  <Link to='/my-alerts' className='navBarLinks'>
                     My Alerts
                   </Link>
                 </Button>
@@ -179,7 +179,7 @@ const Navbar = () => {
                   onClick={handleCloseNavMenu}
                   sx={{ my: 2, display: 'block' }}
                 >
-                  <Link to='/history' className='navBarLinks'>
+                  <Link to='/preferences' className='navBarLinks'>
                     Preferences
                   </Link>
                 </Button>

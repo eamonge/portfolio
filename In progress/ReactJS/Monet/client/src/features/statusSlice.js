@@ -61,7 +61,8 @@ const statusSlice = createSlice({
       //Persist values
       localStorage.removeItem(LS_HISTORY);
       localStorage.removeItem(LS_START);
-      localStorage.removeItem(LS_HISTORY, JSON.stringify(state.history));
+      // localStorage.removeItem(LS_HISTORY, JSON.stringify(state.history));
+      localStorage.removeItem(LS_HISTORY);
     },
     setElapsed: (state, action) => {
       state.elapsed = action.payload;

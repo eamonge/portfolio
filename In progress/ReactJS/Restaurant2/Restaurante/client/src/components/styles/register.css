@@ -1,0 +1,40 @@
+.backModal-login {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100dvw;
+    height: 100dvh;
+}
+
+.contentModal {
+    position: relative;
+    background-color: whitesmoke;
+    width: 50%;
+    height: 50%;
+    border-radius: 20px;
+    left: 25%;
+    top: 25%;
+    text-align: center;
+    overflow: scroll;
+}
+
+.contentModal button {
+    border: none;
+    height: 45px;
+    width: 50%;
+    margin: 1em;
+    border-radius: 5px;
+}
+
+.contentModal .btnCancel {
+    color: white;
+}
+
+.contentModal input {
+    border: none;
+    height: 45px;
+    width: 50%;
+    margin: 1em;
+    border-radius: 5px;
+    text-align: center;
+}

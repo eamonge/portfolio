@@ -26,57 +26,41 @@ export const timeRemaining = (status, elapsed) => {
   return Math.max(max - elapsed);
 }
 
-export const calculateAdherence = (history, shiftStartSec, shiftEndSec, allowances) => {
-  if (!Array.isArray(history)) history = [];
+export function calculateAdherence(history, shiftStartSec, shiftEndSec, thresholds) {
+  const totalShiftSeconds = shiftEndSec - shiftStartSec;
+  let adherentSeconds = 0;
 
-  const totalShiftSecs = shiftEndSec - shiftStartSec;
-  let totalGoodTime = 0;
-  let totalPenalties = 0;
-  const totals = {};
+  for (const { status, startTime, endTime } of history) {
+    const start = Math.max(startTime / 1000, shiftStartSec);
+    const end = Math.min(endTime / 1000, shiftEndSec);
+    if (end <= start) continue;
 
-  history.forEach(({ status, startTime, endTime }) => {
-    const duration = (endTime - startTime) / 1000;
-    totals[status] = (totals[status] ?? 0) + duration;
+    const duration = end - start;
+    const hour = new Date(startTime).getHours();
+    const withinWorkHours = hour >= 9 && hour < 18;
 
-    const startSec = startTime / 1000;
-    const endSec = endTime / 1000;
-    const insideShift = Math.max(0, Math.min(endSec, shiftEndSec) - Math.max(startSec, shiftStartSec));
-    const outsideShift = duration - insideShift;
-
-    if (status === "Available") {
-      // Available is good **only inside shift**
-      totalGoodTime += insideShift;
-      // Logged out outside shift is allowed, so outside shift is penalized if Available is outside
-      if (outsideShift > 0) totalPenalties += outsideShift;
-    } 
-    else if (status === "Break" || status === "Lunch") {
-      const allowed = allowances[status] ?? duration;
-      totalGoodTime += Math.min(duration, allowed); // only count up to allowed
-      if (duration > allowed) totalPenalties += duration - allowed;
-      // Break/Lunch outside shift reduces adherence
-      if (outsideShift > 0) totalPenalties += outsideShift;
-    } 
-    else if (status === "Logged out") {
-      // Good outside shift, bad inside shift
-      if (insideShift > 0) totalPenalties += insideShift;
-      else totalGoodTime += outsideShift; // good outside shift
-    } 
-    else {
-      // Any other unexpected status, fully penalized
-      totalPenalties += duration;
+    if (withinWorkHours) {
+      // Shift hours: Available, Break, Lunch
+      if (status === "Available") {
+        adherentSeconds += duration;
+      } else if (status === "Break" || status === "Lunch") {
+        const limit = thresholds[status] || 0;
+        adherentSeconds += Math.min(duration, limit);
+      }
+      // other statuses inside work hours → non-adherent
+    } else {
+      // Off hours: must be logged out
+      if (!status || status === "Logged out") {
+        adherentSeconds += duration;
+      }
+      // anything else → non-adherent
     }
-  });
+  }
 
-  // Also automatically count **Available as residual for shift gaps**
-  // e.g., any part of shift not covered by Break, Lunch, or Logged out
-  const coveredTime = Object.entries(totals).reduce((sum, [status, t]) => sum + t, 0);
-  const residualAvailable = Math.max(0, totalShiftSecs - coveredTime);
-  totalGoodTime += residualAvailable;
+  const adherencePct =
+    totalShiftSeconds > 0
+      ? (adherentSeconds / totalShiftSeconds) * 100
+      : 100;
 
-  // Final adherence %
-  totalPenalties = Math.min(totalPenalties, totalShiftSecs);
-  let adherencePct = ((totalGoodTime - totalPenalties) / totalShiftSecs) * 100;
-  adherencePct = Math.max(0, Math.min(100, adherencePct));
-
-  return { adherencePct, totals, totalPenalties, totalGoodTime };
-};
+  return { adherencePct };
+}

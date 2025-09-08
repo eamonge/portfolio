@@ -1,95 +1,3 @@
-// import React, { useEffect, useState } from "react";
-// import Typography from "@mui/material/Typography";
-
-// export default function Adherence({ history }) {
-//     const [adherencePct, setAdherencePct] = useState(100);
-
-//     // Set your shift start/end (can be props or Redux-driven)
-//     const shiftStart = new Date();
-//     shiftStart.setHours(9, 0, 0, 0);
-
-//     const shiftEnd = new Date();
-//     shiftEnd.setHours(18, 0, 0, 0);
-
-//     const shiftStartSec = shiftStart.getTime() / 1000;
-//     const shiftEndSec = shiftEnd.getTime() / 1000;
-
-//     const allowances = {
-//         Break: 1800, // 30 minutes
-//         Lunch: 3600, // 60 minutes
-//     };
-
-//     // Calculate adherence
-//     const calculateAdherence = (historyArr) => {
-//         if (!Array.isArray(historyArr)) historyArr = [];
-
-//         const totalShiftSecs = shiftEndSec - shiftStartSec;
-//         let totalGoodTime = 0;
-//         let totalPenalties = 0;
-//         const totals = {};
-
-//         historyArr.forEach(({ status, startTime, endTime }) => {
-//             const duration = (endTime - startTime) / 1000;
-//             totals[status] = (totals[status] ?? 0) + duration;
-
-//             const startSec = startTime / 1000;
-//             const endSec = endTime / 1000;
-//             const insideShift = Math.max(
-//                 0,
-//                 Math.min(endSec, shiftEndSec) - Math.max(startSec, shiftStartSec)
-//             );
-//             const outsideShift = duration - insideShift;
-
-//             if (status === "Available") {
-//                 // Good inside shift
-//                 totalGoodTime += insideShift;
-//             } else if (status === "Break" || status === "Lunch") {
-//                 const allowed = allowances[status] ?? 0;
-//                 totalGoodTime += Math.min(duration, allowed); // count up to allowance
-//                 if (duration > allowed) totalPenalties += duration - allowed;
-//                 if (outsideShift > 0) totalPenalties += outsideShift;
-//             } else if (status === "Logged out") {
-//                 // Good outside shift; inside shift penalized
-//                 if (insideShift > 0) totalPenalties += insideShift;
-//                 else totalGoodTime += outsideShift;
-//             } else {
-//                 // Unknown/bad statuses fully penalized
-//                 totalPenalties += duration;
-//             }
-//         });
-
-//         // Fill any remaining shift time as Available (not covered by events)
-//         const coveredTime = Object.entries(totals).reduce(
-//             (sum, [, t]) => sum + t,
-//             0
-//         );
-//         const residualAvailable = Math.max(0, totalShiftSecs - coveredTime);
-//         totalGoodTime += residualAvailable;
-
-//         // Clamp penalties
-//         totalPenalties = Math.min(totalPenalties, totalShiftSecs);
-
-//         let pct = ((totalGoodTime - totalPenalties) / totalShiftSecs) * 100;
-//         pct = Math.max(0, Math.min(100, pct));
-
-//         return pct;
-//     };
-
-//     // Update adherence when history changes
-//     useEffect(() => {
-//         const pct = calculateAdherence(history);
-//         console.log("Updating adherence! Adherence %:", pct);
-//         setAdherencePct(pct);
-//     }, [history]);
-
-//     return (
-//         <Typography variant="h6">
-//             Adherence: {adherencePct.toFixed(2)}%
-//         </Typography>
-//     );
-// }
-
-
 import Typography from '@mui/material/Typography'
 import React, { useEffect, useState } from 'react'
 import { styled } from '@mui/material/styles';
@@ -136,7 +44,7 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 const Adherance = () => {
-    const { status, elapsed, history } = useSelector((state) => state.status);
+    const { status, startTime, elapsed, history } = useSelector((state) => state.status);
     const [adherancePct, setAdherancePct] = useState(100);
     const currentStatus = status || "Logged out";
 
@@ -173,43 +81,80 @@ const Adherance = () => {
 
     // Compute once when the component mounts or history changes
     const shiftStart = new Date();
-    shiftStart.setHours(18, 13, 0, 0); // 12:20 PM
+    shiftStart.setHours(9, 0, 0, 0); // 12:20 PM
     const shiftEnd = new Date();
-    shiftEnd.setHours(18, 20, 0, 0); // 12:25 PM
+    shiftEnd.setHours(18, 0, 0, 0); // 12:25 PM
+
+    // useEffect(() => {
+    //     const shiftStartSec = shiftStart.getTime() / 1000;
+    //     const shiftEndSec = shiftEnd.getTime() / 1000;
+
+    //     const safeHistory = Array.isArray(history) ? history : [];
+
+    //     // Add current active status as a "virtual" record with endTime = now
+    //     let extendedHistory = [...safeHistory];
+    //     if (status && startTime) {
+    //         extendedHistory.push({
+    //             status,
+    //             startTime,
+    //             endTime: Date.now()
+    //         });
+    //     }
+
+    //     const filteredHistory = extendedHistory
+    //         .map(({ status, startTime, endTime }) => ({
+    //             status,
+    //             startTime,
+    //             endTime
+    //         }))
+    //         .filter(r => r.endTime > r.startTime);
+
+    //     const { adherencePct } = calculateAdherence(
+    //         filteredHistory,
+    //         shiftStartSec,
+    //         shiftEndSec,
+    //         thresholds
+    //     );
+
+    //     setAdherancePct(adherencePct);
+    // }, [history, status, startTime, elapsed, shiftStart, shiftEnd]);
+
 
     useEffect(() => {
-        const shiftLengthSecs = (shiftEnd - shiftStart) / 1000;
         const shiftStartSec = shiftStart.getTime() / 1000;
         const shiftEndSec = shiftEnd.getTime() / 1000;
 
-        const updateAdherence = () => {
-            const safeHistory = Array.isArray(history) ? history : [];
+        const safeHistory = Array.isArray(history) ? history : [];
 
-            // Make sure all entries have startTime/endTime
-            const filteredHistory = safeHistory
-                .map(({ status, startTime, endTime }) => ({
-                    status,
-                    startTime: startTime,
-                    endTime: endTime
-                }))
-                .filter(r => r.endTime > r.startTime);
+        // Add current active status as a "virtual" record
+        let extendedHistory = [...safeHistory];
+        if (status && startTime) {
+            extendedHistory.push({
+                status,
+                startTime,
+                endTime: Date.now()
+            });
+        }
 
-            const { adherencePct, totals, totalPenalties, totalGoodTime } = calculateAdherence(
-                filteredHistory,
-                shiftStartSec,
-                shiftEndSec,
-                thresholds
-            );
+        const filteredHistory = extendedHistory
+            .map(({ status, startTime, endTime }) => ({
+                status,
+                startTime,
+                endTime
+            }))
+            .filter(r => r.endTime > r.startTime);
 
-            console.log("Adherence %:", adherencePct.toFixed(2));
-            setAdherancePct(adherencePct);
-        };
-        updateAdherence();
-        const intervalId = setInterval(updateAdherence, 6000); // update every 6 seconds
-        return () => clearInterval(intervalId);
+        // Run adherence calculation
+        const { adherencePct } = calculateAdherence(
+            filteredHistory,
+            shiftStartSec,
+            shiftEndSec,
+            thresholds
+        );
 
-
-    }, [history, shiftStart, shiftEnd]); // Includes history so interval sees latest log
+        setAdherancePct(adherencePct);
+        console.log('Adherence is: ', adherancePct)
+    }, [history, status, startTime, elapsed, shiftStart, shiftEnd]);
 
     return (
         <div className='adheranceBox contentPanel'>

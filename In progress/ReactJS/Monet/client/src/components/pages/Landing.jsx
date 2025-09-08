@@ -14,6 +14,8 @@ import timeGridPlugin from '@fullcalendar/timegrid'
 import dayGridPlugin from "@fullcalendar/daygrid";
 import Adherance from './Adherance';
 import StatusChange from './StatusChange';
+import CalendarComponent from './CalendarComponent';
+import BulkChange from './BulkChange';
 
 import AbiTest from './abiTest';
 
@@ -54,7 +56,7 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 const Landing = () => {
-    const [abiMessage, setAbiMessage] = useState("Hola k pex");
+    const [gridView, setGridView] = useState("dayGridMonth");
     const today = new Date();
 
     let dd = today.getDate();
@@ -73,6 +75,8 @@ const Landing = () => {
     // const formattedDate = `${dd}-${mm}-${yyyy}`;
     const formattedDate = `${yyyy}-${mm}-${dd}`;
     const formattedDate2 = `${dd}/${mm}/${yyyy}`;
+
+    console.log(formattedDate)
 
     document.addEventListener('DOMContentLoaded', function () {
         var calendarEl = document.getElementById('calendar');
@@ -178,14 +182,28 @@ const Landing = () => {
                                     </Typography>
                                 </AccordionSummary>
                                 <AccordionDetails>
-                                    Content here
+
+                                    <Box sx={{ flexGrow: 1 }}>
+                                        <Grid container spacing={2}>
+                                            <Grid size={{ xs: 12, sm: 12, md: 12, lg: 8, xl: 8 }}>
+                                                <Item>
+                                                    <CalendarComponent view="dayGridMonth" display="background"/>
+                                                </Item>
+                                            </Grid>
+                                            <Grid size={{ xs: 12, sm: 12, md: 12, lg: 4, xl: 4 }}>
+                                                <Item>
+                                                    <BulkChange />
+                                                </Item>
+                                            </Grid>
+                                        </Grid>
+                                    </Box>
                                 </AccordionDetails>
                             </Accordion>
                         </Item>
                     </Grid>
                     <Grid size={{ xs: 12, sm: 12, md: 3, lg: 3, xl: 3 }}>
                         <Item>
-                            <StatusChange />
+                            <StatusChange/>
                         </Item>
                     </Grid>
                 </Grid>
