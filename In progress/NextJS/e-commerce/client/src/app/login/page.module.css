@@ -1,0 +1,46 @@
+.teststs {
+    background: #36D1DC;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #5B86E5, #36D1DC);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #5B86E5, #36D1DC);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100dvw;
+    height: 100dvh;
+}
+
+
+.modal-form {
+    background-color: whitesmoke;
+    width: 50%;
+    height: 50%;
+    border-radius: 20px;
+    position: relative;
+    top: 25%;
+    left: 25%;
+    text-align: center;
+}
+
+.login-input {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    border-bottom: solid 2px black;
+    margin: 1em;
+    width: 50%;
+    color: black;
+}
+
+.login-input:focus {
+    outline: none;
+    color: #5B86E5;
+    border-bottom: solid 2px #5B86E5;
+}
+
+.login-input::selection {
+    color: black;
+    background-color: rgba(0, 0, 0, .4);
+}

@@ -1,0 +1,90 @@
+/* Response design queries */
+
+/* Small phones */
+@media only screen and (min-width: 360px) {
+  .title-h1 {
+    font-size: 1em;
+  }
+
+  .test {
+    /* width: 50%;
+    height: 50%; */
+  }
+}
+
+/* Small devices and most phones */
+@media only screen and (min-width: 480px) {}
+
+/* Tablets */
+@media only screen and (min-width: 768px) {}
+
+/* Smaller desktop viewpoints */
+@media only screen and (min-width: 992px) {}
+
+/* Large devcices and wide screens */
+@media only screen and (min-width: 1200px) {}
+
+/* landing */
+.landingWrapper-content {
+  text-align: center;
+}
+
+.test {
+  border: solid 2px gray;
+  /* position: absolute;
+  top: 15%;
+  left: 25%; */
+  height: auto;
+  text-align: center;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+  font-family: 'Open Sans', sans-serif;
+  color: #545454;
+}
+
+table caption {
+  font-size: 1.5em;
+  margin: .5em 0 .75em;
+}
+
+table tr {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: .35em;
+}
+
+table th,
+table td {
+  padding: .625em;
+  text-align: center;
+}
+
+table th {
+  font-size: .85em;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.positive-action {
+  /* background-color: #64AA41; */
+  background: linear-gradient(90deg, #9ebd13 0%, #008552 100%);
+}
+
+.negative-action {
+  /* background-color: #E2594B; */
+  background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
+}
+
+/* dsfdfd */
